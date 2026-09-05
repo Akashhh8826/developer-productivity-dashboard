@@ -64,7 +64,7 @@ A modern, responsive web application built with Next.js, TypeScript, and Tailwin
    ```
 
 5. **Open in browser:**
-   Open [http://localhost:3000](http://localhost:3000) to see the dashboard.
+   Open your browser at the local server address shown in the terminal.
 
 ---
 
