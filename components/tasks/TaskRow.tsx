@@ -28,7 +28,7 @@ export const TaskRow = memo(function TaskRow({ task, showProject = true }: TaskR
 
   return (
     <div
-      className={`group flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 sm:px-4 sm:py-3.5 bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 rounded-xl hover:shadow-[3px_3px_0px_rgba(0,0,0,0.9)] transition-all duration-150 ease-out ${
+      className={`group flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 sm:px-4 sm:py-3.5 bg-white dark:bg-[#161f30] border-2 border-slate-900 dark:border-slate-700 rounded-xl hover:shadow-[3px_3px_0px_rgba(0,0,0,0.9)] transition-all duration-150 ease-out ${
         isDeleting ? "opacity-0 scale-95 duration-100" : ""
       }`}
     >
@@ -49,8 +49,8 @@ export const TaskRow = memo(function TaskRow({ task, showProject = true }: TaskR
             <span
               className={`text-sm font-black transition-all duration-200 ${
                 task.status === "done"
-                  ? "line-through text-slate-500 dark:text-slate-400 font-normal"
-                  : "text-slate-950 dark:text-slate-50"
+                  ? "line-through text-slate-400 dark:text-slate-500 font-normal"
+                  : "text-slate-950 dark:text-white"
               }`}
             >
               {task.title}
@@ -64,7 +64,7 @@ export const TaskRow = memo(function TaskRow({ task, showProject = true }: TaskR
                 e.stopPropagation();
                 setSelectedProjectId(task.projectId);
               }}
-              className="inline-flex items-center gap-1 text-xs text-slate-700 dark:text-slate-300 hover:text-rose-600 dark:hover:text-rose-400 font-bold mt-0.5 transition-colors"
+              className="inline-flex items-center gap-1 text-xs text-slate-700 dark:text-slate-300 hover:text-rose-600 dark:hover:text-rose-400 font-black mt-0.5 transition-colors"
             >
               <FolderKanban className="w-3.5 h-3.5 text-slate-600 dark:text-slate-400" />
               <span>{task.projectName}</span>
@@ -83,12 +83,12 @@ export const TaskRow = memo(function TaskRow({ task, showProject = true }: TaskR
           onChange={(e) =>
             updateTaskStatus(task.id, e.target.value as TaskStatus)
           }
-          className="text-xs font-black rounded-lg px-2.5 py-1 border-2 border-slate-900 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-950 dark:text-slate-50 cursor-pointer shadow-xs focus:outline-none"
+          className="text-xs font-black rounded-lg px-2.5 py-1 border-2 border-slate-900 dark:border-slate-600 bg-white dark:bg-[#0d1424] text-slate-950 dark:text-white cursor-pointer shadow-xs focus:outline-none"
           aria-label={`Change status for task ${task.title}`}
         >
-          <option value="todo" className="bg-white dark:bg-slate-800 text-slate-950 dark:text-slate-50">To Do</option>
-          <option value="in-progress" className="bg-white dark:bg-slate-800 text-slate-950 dark:text-slate-50">In Progress</option>
-          <option value="done" className="bg-white dark:bg-slate-800 text-slate-950 dark:text-slate-50">Done</option>
+          <option value="todo" className="bg-white dark:bg-slate-900 text-slate-950 dark:text-white">To Do</option>
+          <option value="in-progress" className="bg-white dark:bg-slate-900 text-slate-950 dark:text-white">In Progress</option>
+          <option value="done" className="bg-white dark:bg-slate-900 text-slate-950 dark:text-white">Done</option>
         </select>
 
         {/* Assignee Avatar */}

@@ -40,14 +40,14 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
       {/* Tab Control Bar */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="flex items-center p-1 bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 rounded-lg shadow-sm">
+          <div className="flex items-center p-1 bg-white dark:bg-[#161f30] border-2 border-slate-900 dark:border-slate-700 rounded-lg shadow-sm">
             <button
               type="button"
               onClick={() => setViewMode("list")}
               className={`p-1.5 rounded text-xs font-black transition-colors cursor-pointer flex items-center gap-1 ${
                 viewMode === "list"
                   ? "bg-[#ff8585] text-slate-950 shadow-xs"
-                  : "text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-slate-100"
+                  : "text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white"
               }`}
             >
               <LayoutList className="w-3.5 h-3.5" />
@@ -59,7 +59,7 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
               className={`p-1.5 rounded text-xs font-black transition-colors cursor-pointer flex items-center gap-1 ${
                 viewMode === "board"
                   ? "bg-[#ff8585] text-slate-950 shadow-xs"
-                  : "text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-slate-100"
+                  : "text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white"
               }`}
             >
               <Kanban className="w-3.5 h-3.5" />
@@ -86,7 +86,7 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
             return (
               <div
                 key={task.id}
-                className="neo-card p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700"
+                className="neo-card p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white dark:bg-[#161f30] border-2 border-slate-900 dark:border-slate-700"
               >
                 <div className="flex items-center gap-3 min-w-0 flex-1">
                   <input
@@ -101,8 +101,8 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
                     <p
                       className={`text-xs sm:text-sm font-black truncate ${
                         task.status === "done"
-                          ? "line-through text-slate-500 dark:text-slate-400"
-                          : "text-slate-950 dark:text-slate-50"
+                          ? "line-through text-slate-400 dark:text-slate-500"
+                          : "text-slate-950 dark:text-white"
                       }`}
                     >
                       {task.title}
@@ -124,11 +124,11 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
                     onChange={(e) =>
                       updateTaskStatus(task.id, e.target.value as TaskStatus)
                     }
-                    className="text-xs font-black rounded-lg px-2.5 py-1 border-2 border-slate-900 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-950 dark:text-slate-50 cursor-pointer shadow-xs"
+                    className="text-xs font-black rounded-lg px-2.5 py-1 border-2 border-slate-900 dark:border-slate-600 bg-slate-50 dark:bg-[#0d1424] text-slate-950 dark:text-white cursor-pointer shadow-xs focus:outline-none"
                   >
-                    <option value="todo">To Do</option>
-                    <option value="in-progress">In Progress</option>
-                    <option value="done">Done</option>
+                    <option value="todo" className="bg-white dark:bg-slate-900 text-slate-950 dark:text-white">To Do</option>
+                    <option value="in-progress" className="bg-white dark:bg-slate-900 text-slate-950 dark:text-white">In Progress</option>
+                    <option value="done" className="bg-white dark:bg-slate-900 text-slate-950 dark:text-white">Done</option>
                   </select>
 
                   <div className="flex items-center gap-1.5 text-xs text-slate-700 dark:text-slate-300">
@@ -160,7 +160,7 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
           })}
 
           {projectTasks.length === 0 && (
-            <div className="text-center py-12 neo-card p-6 text-slate-600 dark:text-slate-300 text-xs font-bold">
+            <div className="text-center py-12 neo-card p-6 text-slate-600 dark:text-slate-300 text-xs font-bold bg-white dark:bg-[#161f30]">
               No sprint tasks created for this project yet.
             </div>
           )}
@@ -186,16 +186,16 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
             return (
               <div
                 key={colStatus}
-                className="neo-card p-3.5 bg-slate-50/90 dark:bg-slate-900/80 border-2 border-slate-900 dark:border-slate-700 space-y-3"
+                className="neo-card p-3.5 bg-slate-50 dark:bg-[#161f30] border-2 border-slate-900 dark:border-slate-700 space-y-3"
               >
                 <div className="flex items-center justify-between pb-2 border-b-2 border-slate-900 dark:border-slate-700">
                   <div className="flex items-center gap-2">
                     <span className={`w-3 h-3 rounded-full ${colColor} border border-slate-900`} />
-                    <span className="text-xs font-black uppercase tracking-wider text-slate-950 dark:text-slate-50">
+                    <span className="text-xs font-black uppercase tracking-wider text-slate-950 dark:text-white">
                       {colTitle}
                     </span>
                   </div>
-                  <span className="font-mono text-xs font-black px-2 py-0.5 rounded bg-white dark:bg-slate-800 border-2 border-slate-900 dark:border-slate-700 text-slate-950 dark:text-slate-50">
+                  <span className="font-mono text-xs font-black px-2 py-0.5 rounded bg-white dark:bg-[#0d1424] border-2 border-slate-900 dark:border-slate-700 text-slate-950 dark:text-white">
                     {colTasks.length}
                   </span>
                 </div>
