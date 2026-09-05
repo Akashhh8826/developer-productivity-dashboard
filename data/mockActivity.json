@@ -1,0 +1,57 @@
+[
+  {
+    "id": "act-1",
+    "projectId": "proj-1",
+    "projectName": "E-Commerce Website",
+    "type": "project_created",
+    "title": "Created a new project 'E-Commerce Website'",
+    "description": "Initialized Next.js repository with Tailwind CSS and Stripe checkout modules.",
+    "timestamp": "2026-08-30T14:30:00.000Z",
+    "timeAgo": "2h ago",
+    "badgeColor": "coral"
+  },
+  {
+    "id": "act-2",
+    "projectId": "proj-1",
+    "projectName": "E-Commerce Website",
+    "type": "task_completed",
+    "title": "Completed task 'UI Design System'",
+    "description": "Merged Figma design tokens into Tailwind CSS config with neo-brutalist theme tokens.",
+    "timestamp": "2026-08-30T13:00:00.000Z",
+    "timeAgo": "3h ago",
+    "badgeColor": "yellow"
+  },
+  {
+    "id": "act-3",
+    "projectId": "proj-1",
+    "projectName": "E-Commerce Website",
+    "type": "deadline_updated",
+    "title": "Deadline updated for 'Database Integration'",
+    "description": "Sprint timeline adjusted to accommodate PostgreSQL connection pooling tests.",
+    "timestamp": "2026-08-30T11:00:00.000Z",
+    "timeAgo": "5h ago",
+    "badgeColor": "purple"
+  },
+  {
+    "id": "act-4",
+    "projectId": "proj-1",
+    "projectName": "E-Commerce Website",
+    "type": "note_added",
+    "title": "Added new note in 'Project Atlas'",
+    "description": "Published comprehensive API Integration Plan covering rate limits and webhook security.",
+    "timestamp": "2026-08-29T16:00:00.000Z",
+    "timeAgo": "1d ago",
+    "badgeColor": "blue"
+  },
+  {
+    "id": "act-5",
+    "projectId": "proj-1",
+    "projectName": "E-Commerce Website",
+    "type": "credential_updated",
+    "title": "Configured Stripe API Key in Developer Vault",
+    "description": "Encrypted production webhook secrets with AES-256 for live checkout processing.",
+    "timestamp": "2026-08-28T10:00:00.000Z",
+    "timeAgo": "2d ago",
+    "badgeColor": "green"
+  }
+]

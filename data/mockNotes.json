@@ -1,0 +1,62 @@
+[
+  {
+    "id": "note-1",
+    "projectId": "proj-1",
+    "title": "API Integration Plan",
+    "content": "### 1. Integrations\n- **Stripe API** for secure checkout & webhook handling (Customer sessions, refund webhooks, idempotency keys).\n- **SendGrid API** for transactional notification emails (Order confirmation, invoice PDFs).\n- **Cloudinary API** for media assets and image transformation hosting.\n\n### 2. Rate Limits & Edge Caching\n- Implement Redis rate limiting at `100 req/min` per API key on `/api/v1/*`.\n- Cloudflare Edge Cache for static product catalog items with 60s TTL.\n\n### 3. Authentication & Security\n- JWT Bearer tokens with 15-minute expiration and HTTP-only refresh cookies.\n- HMAC-SHA256 signature verification on all incoming webhook routes.",
+    "category": "Architecture",
+    "tags": ["Stripe", "API", "Security", "Backend"],
+    "createdAt": "2026-05-15",
+    "updatedAt": "1 week ago"
+  },
+  {
+    "id": "note-2",
+    "projectId": "proj-1",
+    "title": "Project Requirements",
+    "content": "### Core Feature Set\n1. **Product Catalog**: Dynamic categories, facet filtering by price/color/brand, and real-time inventory count.\n2. **Shopping Cart & Checkout**: Local state persistence, optimistic UI updates, Stripe Elements integration.\n3. **Customer Portal**: Order history tracking, invoice downloads, address book management.\n4. **Admin Dashboard**: SKU inventory management, low-stock threshold triggers, sales telemetry charts.",
+    "category": "Specifications",
+    "tags": ["Requirements", "MVP", "Specs"],
+    "createdAt": "2026-05-11",
+    "updatedAt": "2 weeks ago"
+  },
+  {
+    "id": "note-3",
+    "projectId": "proj-1",
+    "title": "Project Brainstorming Notes",
+    "content": "### Ideas & Optimizations\n- Consider implementing a 1-click checkout option for authenticated users.\n- Explore vector search using pgvector for natural language search queries (e.g. \"warm winter jacket for hiking\").\n- Implement live abandoned cart recovery emails triggered after 2 hours of inactivity.",
+    "category": "Brainstorming",
+    "tags": ["Ideas", "Growth", "UX"],
+    "createdAt": "2026-05-12",
+    "updatedAt": "2 weeks ago"
+  },
+  {
+    "id": "note-4",
+    "projectId": "proj-1",
+    "title": "Database Schema Ideas",
+    "content": "### PostgreSQL Tables\n- `users` (id, email, password_hash, role, created_at)\n- `products` (id, title, slug, price_cents, inventory_count, metadata_jsonb)\n- `orders` (id, user_id, status, total_cents, stripe_payment_intent_id, created_at)\n- `order_items` (id, order_id, product_id, quantity, unit_price_cents)\n\n### Indexes\n- Index on `products(slug)` and `products(category_id)`\n- Composite index on `orders(user_id, created_at DESC)`",
+    "category": "Database",
+    "tags": ["PostgreSQL", "Database", "Schema"],
+    "createdAt": "2026-05-14",
+    "updatedAt": "1 week ago"
+  },
+  {
+    "id": "note-5",
+    "projectId": "proj-1",
+    "title": "UI/UX Design Notes",
+    "content": "### Visual Guidelines\n- Clean neo-brutalist tech aesthetic with 2px borders and soft pastel accents.\n- Outfit or Inter typography for crisp readability on high-DPI displays.\n- High-contrast accessible color tokens adhering to WCAG 2.1 AAA compliance.\n- Micro-interactions: Button click bounce, subtle hover lift, and spring animations on modals.",
+    "category": "Design",
+    "tags": ["UI/UX", "Design System", "Figma"],
+    "createdAt": "2026-05-16",
+    "updatedAt": "5 days ago"
+  },
+  {
+    "id": "note-6",
+    "projectId": "proj-2",
+    "title": "Portfolio 3D Canvas Specs",
+    "content": "### Three.js Pipeline\n- Low-poly interactive developer desk scene with physics-based drag-and-drop items.\n- Lazy-load WebGL context on scroll to optimize First Contentful Paint (<0.8s).\n- Fallback 2D CSS card layout for low-power mobile devices and reduced-motion preferences.",
+    "category": "Frontend",
+    "tags": ["Three.js", "WebGL", "Performance"],
+    "createdAt": "2026-05-18",
+    "updatedAt": "3 days ago"
+  }
+]

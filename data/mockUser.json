@@ -1,0 +1,9 @@
+{
+  "id": "usr_01",
+  "name": "Alex Chen",
+  "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+  "role": "Senior Full-Stack Engineer",
+  "email": "alex.chen@devops.internal",
+  "department": "Core Platform & Infrastructure",
+  "location": "San Francisco, CA (Remote)"
+}

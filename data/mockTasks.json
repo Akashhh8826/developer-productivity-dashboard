@@ -1,0 +1,517 @@
+[
+  {
+    "id": "task-101",
+    "projectId": "proj-1",
+    "projectName": "E-Commerce REST API",
+    "title": "Implement Stripe webhook signature verification",
+    "description": "Ensure incoming payment intents are securely signed and verified against replay attacks.",
+    "status": "done",
+    "priority": "urgent",
+    "assignee": {
+      "name": "Alex Chen",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "role": "Lead Architect"
+    },
+    "dueDate": "2026-08-22"
+  },
+  {
+    "id": "task-102",
+    "projectId": "proj-1",
+    "projectName": "E-Commerce REST API",
+    "title": "Optimize MongoDB compound indexes for category filtering",
+    "description": "Benchmark query latency for product catalog filter by price, brand, and rating.",
+    "status": "done",
+    "priority": "high",
+    "assignee": {
+      "name": "Liam Torres",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "role": "Backend Engineer"
+    },
+    "dueDate": "2026-08-24"
+  },
+  {
+    "id": "task-103",
+    "projectId": "proj-1",
+    "projectName": "E-Commerce REST API",
+    "title": "Set up Redis caching layer for hot product lookups",
+    "description": "Add 5-minute TTL cache on product summary endpoint with invalidation on inventory updates.",
+    "status": "in-progress",
+    "priority": "high",
+    "assignee": {
+      "name": "Alex Chen",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "role": "Lead Architect"
+    },
+    "dueDate": "2026-08-25"
+  },
+  {
+    "id": "task-104",
+    "projectId": "proj-1",
+    "projectName": "E-Commerce REST API",
+    "title": "Write OpenAPI 3.0 swagger documentation",
+    "description": "Generate interactive schema docs for external merchant integration partners.",
+    "status": "in-progress",
+    "priority": "medium",
+    "assignee": {
+      "name": "Maya Patel",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+      "role": "Full-Stack Dev"
+    },
+    "dueDate": "2026-08-28"
+  },
+  {
+    "id": "task-105",
+    "projectId": "proj-1",
+    "projectName": "E-Commerce REST API",
+    "title": "Configure Prometheus metrics and health check route",
+    "description": "Expose `/metrics` endpoint with p99 latency counters and memory footprint.",
+    "status": "todo",
+    "priority": "medium",
+    "assignee": {
+      "name": "Sarah Jenkins",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
+      "role": "DevOps Engineer"
+    },
+    "dueDate": "2026-09-02"
+  },
+  {
+    "id": "task-106",
+    "projectId": "proj-1",
+    "projectName": "E-Commerce REST API",
+    "title": "Load test order placement checkout flow under 500 RPS",
+    "description": "Use k6/Artillery to detect database locking issues during peak concurrency.",
+    "status": "todo",
+    "priority": "high",
+    "assignee": {
+      "name": "Liam Torres",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "role": "Backend Engineer"
+    },
+    "dueDate": "2026-09-10"
+  },
+
+  {
+    "id": "task-201",
+    "projectId": "proj-2",
+    "projectName": "Real-Time Chat App",
+    "title": "Build WebSocket channel reconnect logic with backoff",
+    "description": "Handle intermittent network drops with exponential retry and message queue buffering.",
+    "status": "done",
+    "priority": "high",
+    "assignee": {
+      "name": "Alex Chen",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "role": "Lead Architect"
+    },
+    "dueDate": "2026-08-20"
+  },
+  {
+    "id": "task-202",
+    "projectId": "proj-2",
+    "projectName": "Real-Time Chat App",
+    "title": "Implement optimistic UI message rendering and delivery receipts",
+    "description": "Display message bubble immediately with pending checkmark before socket ACK.",
+    "status": "done",
+    "priority": "medium",
+    "assignee": {
+      "name": "Maya Patel",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+      "role": "Full-Stack Dev"
+    },
+    "dueDate": "2026-08-23"
+  },
+  {
+    "id": "task-203",
+    "projectId": "proj-2",
+    "projectName": "Real-Time Chat App",
+    "title": "Add typing indicator and user presence sync via Redis Pub/Sub",
+    "description": "Broadcast ephemeral presence states without stressing the primary relational database.",
+    "status": "in-progress",
+    "priority": "medium",
+    "assignee": {
+      "name": "Liam Torres",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "role": "Backend Engineer"
+    },
+    "dueDate": "2026-08-25"
+  },
+  {
+    "id": "task-204",
+    "projectId": "proj-2",
+    "projectName": "Real-Time Chat App",
+    "title": "Support markdown formatting and code syntax highlighting in chat",
+    "description": "Integrate lightweight markdown parser with code block copy button.",
+    "status": "todo",
+    "priority": "low",
+    "assignee": {
+      "name": "Maya Patel",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+      "role": "Full-Stack Dev"
+    },
+    "dueDate": "2026-09-02"
+  },
+  {
+    "id": "task-205",
+    "projectId": "proj-2",
+    "projectName": "Real-Time Chat App",
+    "title": "Implement S3 presigned URL generation for image and file attachments",
+    "description": "Direct browser upload pipeline with virus scan hook and image thumbnail generation.",
+    "status": "todo",
+    "priority": "urgent",
+    "assignee": {
+      "name": "Sarah Jenkins",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
+      "role": "DevOps Engineer"
+    },
+    "dueDate": "2026-08-29"
+  },
+  {
+    "id": "task-206",
+    "projectId": "proj-2",
+    "projectName": "Real-Time Chat App",
+    "title": "Add end-to-end encryption for 1-on-1 direct messaging",
+    "description": "Research Web Crypto API client-side key exchange for secure conversations.",
+    "status": "todo",
+    "priority": "high",
+    "assignee": {
+      "name": "Alex Chen",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "role": "Lead Architect"
+    },
+    "dueDate": "2026-09-25"
+  },
+
+  {
+    "id": "task-301",
+    "projectId": "proj-3",
+    "projectName": "Task Management System",
+    "title": "Set up Prisma schema and initial PostgreSQL migrations",
+    "description": "Define relational models for Workspaces, Boards, Sprints, Tasks, and Comments.",
+    "status": "done",
+    "priority": "high",
+    "assignee": {
+      "name": "Alex Chen",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "role": "Lead Architect"
+    },
+    "dueDate": "2026-08-10"
+  },
+  {
+    "id": "task-302",
+    "projectId": "proj-3",
+    "projectName": "Task Management System",
+    "title": "Build drag-and-drop Kanban column board",
+    "description": "Implement fluid card drag-and-drop with optimistic reordering and position indexing.",
+    "status": "done",
+    "priority": "urgent",
+    "assignee": {
+      "name": "Maya Patel",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+      "role": "Full-Stack Dev"
+    },
+    "dueDate": "2026-08-15"
+  },
+  {
+    "id": "task-303",
+    "projectId": "proj-3",
+    "projectName": "Task Management System",
+    "title": "Implement RBAC permissions (Admin, Member, Viewer)",
+    "description": "Secure Server Actions and API endpoints with role verification middleware.",
+    "status": "done",
+    "priority": "high",
+    "assignee": {
+      "name": "Liam Torres",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "role": "Backend Engineer"
+    },
+    "dueDate": "2026-08-19"
+  },
+  {
+    "id": "task-304",
+    "projectId": "proj-3",
+    "projectName": "Task Management System",
+    "title": "Configure Next.js Server-Side Rendering for fast board load",
+    "description": "Pre-fetch sprint data with React Server Components for sub-200ms TTFB.",
+    "status": "done",
+    "priority": "medium",
+    "assignee": {
+      "name": "Alex Chen",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "role": "Lead Architect"
+    },
+    "dueDate": "2026-08-22"
+  },
+  {
+    "id": "task-305",
+    "projectId": "proj-3",
+    "projectName": "Task Management System",
+    "title": "Add automated email notifications on task assignment",
+    "description": "Integrate Resend transactional email templates triggered by queue events.",
+    "status": "done",
+    "priority": "medium",
+    "assignee": {
+      "name": "Sarah Jenkins",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
+      "role": "DevOps Engineer"
+    },
+    "dueDate": "2026-08-24"
+  },
+  {
+    "id": "task-306",
+    "projectId": "proj-3",
+    "projectName": "Task Management System",
+    "title": "Generate automated sprint burndown velocity reports",
+    "description": "Calculate story point completion rate across 2-week agile intervals.",
+    "status": "in-progress",
+    "priority": "medium",
+    "assignee": {
+      "name": "Maya Patel",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+      "role": "Full-Stack Dev"
+    },
+    "dueDate": "2026-09-02"
+  },
+
+  {
+    "id": "task-401",
+    "projectId": "proj-4",
+    "projectName": "Portfolio CMS",
+    "title": "Build Markdown / MDX live editor with live preview",
+    "description": "Rich text editing with frontmatter validation and image insert shortcut.",
+    "status": "done",
+    "priority": "high",
+    "assignee": {
+      "name": "Maya Patel",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+      "role": "Full-Stack Dev"
+    },
+    "dueDate": "2026-08-05"
+  },
+  {
+    "id": "task-402",
+    "projectId": "proj-4",
+    "projectName": "Portfolio CMS",
+    "title": "Implement Firebase Storage image optimization pipeline",
+    "description": "Automatically convert uploaded artwork into WebP and AVIF responsive sizes.",
+    "status": "done",
+    "priority": "medium",
+    "assignee": {
+      "name": "Sarah Jenkins",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
+      "role": "DevOps Engineer"
+    },
+    "dueDate": "2026-08-10"
+  },
+  {
+    "id": "task-403",
+    "projectId": "proj-4",
+    "projectName": "Portfolio CMS",
+    "title": "Design GraphQL query schema for dynamic page rendering",
+    "description": "Expose published articles, case studies, and tags via protected GraphQL endpoint.",
+    "status": "done",
+    "priority": "high",
+    "assignee": {
+      "name": "Alex Chen",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "role": "Lead Architect"
+    },
+    "dueDate": "2026-08-14"
+  },
+  {
+    "id": "task-404",
+    "projectId": "proj-4",
+    "projectName": "Portfolio CMS",
+    "title": "Set up webhook trigger for static site regeneration",
+    "description": "Call Vercel deploy hook when content author clicks Publish.",
+    "status": "done",
+    "priority": "medium",
+    "assignee": {
+      "name": "Liam Torres",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "role": "Backend Engineer"
+    },
+    "dueDate": "2026-08-17"
+  },
+  {
+    "id": "task-405",
+    "projectId": "proj-4",
+    "projectName": "Portfolio CMS",
+    "title": "Final production QA and accessibility audit",
+    "description": "Lighthouse score 100 on performance, accessibility, SEO, and best practices.",
+    "status": "done",
+    "priority": "low",
+    "assignee": {
+      "name": "Maya Patel",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+      "role": "Full-Stack Dev"
+    },
+    "dueDate": "2026-08-19"
+  },
+
+  {
+    "id": "task-501",
+    "projectId": "proj-5",
+    "projectName": "Inventory Tracker",
+    "title": "Create barcode & QR code camera scanning interface",
+    "description": "Utilize HTML5 WebRTC stream with ZXing barcode reader for fast warehouse check-in.",
+    "status": "done",
+    "priority": "urgent",
+    "assignee": {
+      "name": "Maya Patel",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+      "role": "Full-Stack Dev"
+    },
+    "dueDate": "2026-08-21"
+  },
+  {
+    "id": "task-502",
+    "projectId": "proj-5",
+    "projectName": "Inventory Tracker",
+    "title": "Configure multi-warehouse stock quantity tracking database tables",
+    "description": "Add database schema with atomic decrements on dispatch to avoid negative counts.",
+    "status": "in-progress",
+    "priority": "high",
+    "assignee": {
+      "name": "Liam Torres",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "role": "Backend Engineer"
+    },
+    "dueDate": "2026-08-25"
+  },
+  {
+    "id": "task-503",
+    "projectId": "proj-5",
+    "projectName": "Inventory Tracker",
+    "title": "Build automatic low-stock alert trigger and purchase order generator",
+    "description": "Send notifications when SKU count drops below safety stock threshold.",
+    "status": "todo",
+    "priority": "high",
+    "assignee": {
+      "name": "Alex Chen",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "role": "Lead Architect"
+    },
+    "dueDate": "2026-09-08"
+  },
+  {
+    "id": "task-504",
+    "projectId": "proj-5",
+    "projectName": "Inventory Tracker",
+    "title": "Design supplier procurement management dashboard view",
+    "description": "List lead times, payment terms, and historical shipping reliability metrics.",
+    "status": "todo",
+    "priority": "medium",
+    "assignee": {
+      "name": "Maya Patel",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+      "role": "Full-Stack Dev"
+    },
+    "dueDate": "2026-09-18"
+  },
+  {
+    "id": "task-505",
+    "projectId": "proj-5",
+    "projectName": "Inventory Tracker",
+    "title": "Export CSV / PDF reports for quarterly inventory accounting audits",
+    "description": "Server-side streaming generation of comprehensive valuation spreadsheets.",
+    "status": "todo",
+    "priority": "low",
+    "assignee": {
+      "name": "Liam Torres",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "role": "Backend Engineer"
+    },
+    "dueDate": "2026-09-28"
+  },
+  {
+    "id": "task-506",
+    "projectId": "proj-5",
+    "projectName": "Inventory Tracker",
+    "title": "Deploy staging environment with seed inventory datasets",
+    "description": "Automate staging database migrations with GitHub Actions CD pipeline.",
+    "status": "todo",
+    "priority": "medium",
+    "assignee": {
+      "name": "Sarah Jenkins",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
+      "role": "DevOps Engineer"
+    },
+    "dueDate": "2026-10-05"
+  },
+
+  {
+    "id": "task-601",
+    "projectId": "proj-6",
+    "projectName": "Auth Microservice",
+    "title": "Design cryptographic token rotation architecture",
+    "description": "Implement asymmetric RSA/ECDSA signing key rotation with JWKS endpoint.",
+    "status": "done",
+    "priority": "urgent",
+    "assignee": {
+      "name": "Alex Chen",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "role": "Lead Architect"
+    },
+    "dueDate": "2026-08-18"
+  },
+  {
+    "id": "task-602",
+    "projectId": "proj-6",
+    "projectName": "Auth Microservice",
+    "title": "Implement Argon2id password hashing with custom memory cost",
+    "description": "Configure OWASP-recommended work factors to mitigate GPU cracking.",
+    "status": "in-progress",
+    "priority": "high",
+    "assignee": {
+      "name": "Liam Torres",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "role": "Backend Engineer"
+    },
+    "dueDate": "2026-08-25"
+  },
+  {
+    "id": "task-603",
+    "projectId": "proj-6",
+    "projectName": "Auth Microservice",
+    "title": "Set up TOTP authenticator app QR pairing and backup recovery codes",
+    "description": "RFC 6238 compliant two-factor authentication with 6-digit verification code.",
+    "status": "todo",
+    "priority": "high",
+    "assignee": {
+      "name": "Alex Chen",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "role": "Lead Architect"
+    },
+    "dueDate": "2026-09-12"
+  },
+  {
+    "id": "task-604",
+    "projectId": "proj-6",
+    "projectName": "Auth Microservice",
+    "title": "Build Redis sliding window rate limiter against credential stuffing",
+    "description": "Throttle login attempts to 5 per IP / email window before temporary lock.",
+    "status": "todo",
+    "priority": "urgent",
+    "assignee": {
+      "name": "Sarah Jenkins",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
+      "role": "DevOps Engineer"
+    },
+    "dueDate": "2026-09-15"
+  },
+  {
+    "id": "task-605",
+    "projectId": "proj-6",
+    "projectName": "Auth Microservice",
+    "title": "Implement OAuth2 OpenID Connect discovery endpoint (`/.well-known/openid-configuration`)",
+    "description": "Provide standard provider metadata for enterprise SSO federation.",
+    "status": "todo",
+    "priority": "medium",
+    "assignee": {
+      "name": "Liam Torres",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "role": "Backend Engineer"
+    },
+    "dueDate": "2026-10-01"
+  }
+]
