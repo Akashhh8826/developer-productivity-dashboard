@@ -3,7 +3,7 @@
 A modern, responsive web application built with Next.js, TypeScript, and Tailwind CSS to track developer productivity, manage projects, and organize sprint tasks.
 
 ## 🔗 Live Demo
-- **Live Website:** [https://developer-productivity-dashboard.vercel.app](https://developer-productivity-dashboard.vercel.app)
+- **Live Website (GitHub Pages):** [https://akashhh8826.github.io/developer-productivity-dashboard/](https://akashhh8826.github.io/developer-productivity-dashboard/)
 - **GitHub Repository:** [https://github.com/Akashhh8826/developer-productivity-dashboard](https://github.com/Akashhh8826/developer-productivity-dashboard)
 
 ---
@@ -37,7 +37,7 @@ A modern, responsive web application built with Next.js, TypeScript, and Tailwin
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
 - **Icons:** Lucide React
-- **Deployment:** Vercel
+- **Hosting:** GitHub Pages & Vercel
 
 ---
 
