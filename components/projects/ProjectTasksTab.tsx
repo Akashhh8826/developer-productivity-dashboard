@@ -40,14 +40,14 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
       {/* Tab Control Bar */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="flex items-center p-1 bg-white dark:bg-slate-900 border border-slate-900 dark:border-slate-700 rounded-lg shadow-sm">
+          <div className="flex items-center p-1 bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 rounded-lg shadow-sm">
             <button
               type="button"
               onClick={() => setViewMode("list")}
-              className={`p-1.5 rounded text-xs font-bold transition-colors cursor-pointer flex items-center gap-1 ${
+              className={`p-1.5 rounded text-xs font-black transition-colors cursor-pointer flex items-center gap-1 ${
                 viewMode === "list"
                   ? "bg-[#ff8585] text-slate-950 shadow-xs"
-                  : "text-slate-600 dark:text-slate-400 hover:text-slate-900"
+                  : "text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-slate-100"
               }`}
             >
               <LayoutList className="w-3.5 h-3.5" />
@@ -56,10 +56,10 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
             <button
               type="button"
               onClick={() => setViewMode("board")}
-              className={`p-1.5 rounded text-xs font-bold transition-colors cursor-pointer flex items-center gap-1 ${
+              className={`p-1.5 rounded text-xs font-black transition-colors cursor-pointer flex items-center gap-1 ${
                 viewMode === "board"
                   ? "bg-[#ff8585] text-slate-950 shadow-xs"
-                  : "text-slate-600 dark:text-slate-400 hover:text-slate-900"
+                  : "text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-slate-100"
               }`}
             >
               <Kanban className="w-3.5 h-3.5" />
@@ -86,7 +86,7 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
             return (
               <div
                 key={task.id}
-                className="neo-card p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white dark:bg-slate-900"
+                className="neo-card p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700"
               >
                 <div className="flex items-center gap-3 min-w-0 flex-1">
                   <input
@@ -95,20 +95,20 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
                     onChange={(e) =>
                       updateTaskStatus(task.id, e.target.checked ? "done" : "todo")
                     }
-                    className="w-4 h-4 rounded border-slate-400 text-rose-500 focus:ring-rose-400 cursor-pointer"
+                    className="w-4 h-4 rounded border-2 border-slate-900 text-rose-500 focus:ring-rose-400 cursor-pointer"
                   />
                   <div className="min-w-0">
                     <p
-                      className={`text-xs sm:text-sm font-bold truncate ${
+                      className={`text-xs sm:text-sm font-black truncate ${
                         task.status === "done"
-                          ? "line-through text-slate-400 dark:text-slate-500"
-                          : "text-slate-900 dark:text-slate-100"
+                          ? "line-through text-slate-500 dark:text-slate-400"
+                          : "text-slate-950 dark:text-slate-50"
                       }`}
                     >
                       {task.title}
                     </p>
                     {task.description && (
-                      <p className="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">
+                      <p className="text-xs font-bold text-slate-700 dark:text-slate-300 truncate mt-0.5">
                         {task.description}
                       </p>
                     )}
@@ -124,14 +124,14 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
                     onChange={(e) =>
                       updateTaskStatus(task.id, e.target.value as TaskStatus)
                     }
-                    className="text-xs font-bold rounded-lg px-2 py-1 border border-slate-900 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 cursor-pointer shadow-xs"
+                    className="text-xs font-black rounded-lg px-2.5 py-1 border-2 border-slate-900 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-950 dark:text-slate-50 cursor-pointer shadow-xs"
                   >
                     <option value="todo">To Do</option>
                     <option value="in-progress">In Progress</option>
                     <option value="done">Done</option>
                   </select>
 
-                  <div className="flex items-center gap-1.5 text-xs text-slate-400">
+                  <div className="flex items-center gap-1.5 text-xs text-slate-700 dark:text-slate-300">
                     <Avatar
                       src={task.assignee.avatar}
                       name={task.assignee.name}
@@ -139,15 +139,17 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
                     />
                   </div>
 
-                  <span className="text-[11px] font-mono font-semibold text-slate-500 flex items-center gap-1">
-                    <Calendar className="w-3 h-3" />
+                  <span className={`text-xs font-mono font-bold flex items-center gap-1 ${
+                    isTaskOverdue ? "text-rose-600 dark:text-rose-400" : "text-slate-700 dark:text-slate-300"
+                  }`}>
+                    <Calendar className="w-3.5 h-3.5" />
                     <span>{formatDate(task.dueDate)}</span>
                   </span>
 
                   <button
                     type="button"
                     onClick={() => handleDelete(task.id, task.title)}
-                    className="p-1 rounded-md text-slate-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition-colors cursor-pointer"
+                    className="p-1 rounded-md text-slate-500 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition-colors cursor-pointer"
                     title="Delete task"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
@@ -158,7 +160,7 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
           })}
 
           {projectTasks.length === 0 && (
-            <div className="text-center py-12 neo-card p-6 text-slate-400 text-xs font-semibold">
+            <div className="text-center py-12 neo-card p-6 text-slate-600 dark:text-slate-300 text-xs font-bold">
               No sprint tasks created for this project yet.
             </div>
           )}
@@ -176,24 +178,24 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
                 : "Done";
             const colColor =
               colStatus === "todo"
-                ? "bg-slate-200"
+                ? "bg-slate-400"
                 : colStatus === "in-progress"
-                ? "bg-blue-400"
-                : "bg-emerald-400";
+                ? "bg-blue-500"
+                : "bg-emerald-500";
 
             return (
               <div
                 key={colStatus}
-                className="neo-card p-3.5 bg-slate-50/70 dark:bg-slate-900/60 space-y-3"
+                className="neo-card p-3.5 bg-slate-50/90 dark:bg-slate-900/80 border-2 border-slate-900 dark:border-slate-700 space-y-3"
               >
-                <div className="flex items-center justify-between pb-2 border-b border-slate-200 dark:border-slate-800">
+                <div className="flex items-center justify-between pb-2 border-b-2 border-slate-900 dark:border-slate-700">
                   <div className="flex items-center gap-2">
-                    <span className={`w-2.5 h-2.5 rounded-full ${colColor}`} />
-                    <span className="text-xs font-black uppercase tracking-wider text-slate-800 dark:text-slate-200">
+                    <span className={`w-3 h-3 rounded-full ${colColor} border border-slate-900`} />
+                    <span className="text-xs font-black uppercase tracking-wider text-slate-950 dark:text-slate-50">
                       {colTitle}
                     </span>
                   </div>
-                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-white dark:bg-slate-800 border border-slate-900 dark:border-slate-700">
+                  <span className="font-mono text-xs font-black px-2 py-0.5 rounded bg-white dark:bg-slate-800 border-2 border-slate-900 dark:border-slate-700 text-slate-950 dark:text-slate-50">
                     {colTasks.length}
                   </span>
                 </div>
@@ -203,7 +205,7 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
                     <TaskCard key={task.id} task={task} />
                   ))}
                   {colTasks.length === 0 && (
-                    <p className="text-xs text-slate-400 text-center py-6">
+                    <p className="text-xs font-bold text-slate-500 dark:text-slate-400 text-center py-6">
                       No tasks
                     </p>
                   )}

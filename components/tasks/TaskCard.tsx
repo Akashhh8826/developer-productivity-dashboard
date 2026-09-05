@@ -27,12 +27,12 @@ export const TaskCard = memo(function TaskCard({ task }: TaskCardProps) {
 
   return (
     <div
-      className={`group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-200 ease-out flex flex-col justify-between gap-3 smooth-gpu ${
+      className={`group bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-700 rounded-xl p-4 shadow-[2px_2px_0px_rgba(0,0,0,0.9)] hover:shadow-[4px_4px_0px_rgba(0,0,0,0.9)] transition-all duration-150 ease-out flex flex-col justify-between gap-3 ${
         isDeleting ? "opacity-0 scale-95 duration-100" : ""
       }`}
     >
       <div>
-        <div className="flex items-start justify-between gap-2 mb-1.5">
+        <div className="flex items-start justify-between gap-2 mb-2">
           <PriorityBadge priority={task.priority} size="sm" />
           <div className="flex items-center gap-1">
             <select
@@ -40,16 +40,16 @@ export const TaskCard = memo(function TaskCard({ task }: TaskCardProps) {
               onChange={(e) =>
                 updateTaskStatus(task.id, e.target.value as TaskStatus)
               }
-              className="text-[11px] font-semibold rounded-md px-2 py-0.5 border bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-700 cursor-pointer"
+              className="text-xs font-black rounded-lg px-2 py-0.5 border-2 border-slate-900 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-950 dark:text-slate-50 cursor-pointer"
             >
-              <option value="todo">To Do</option>
-              <option value="in-progress">In Progress</option>
-              <option value="done">Done</option>
+              <option value="todo" className="bg-white dark:bg-slate-800 text-slate-950 dark:text-slate-50">To Do</option>
+              <option value="in-progress" className="bg-white dark:bg-slate-800 text-slate-950 dark:text-slate-50">In Progress</option>
+              <option value="done" className="bg-white dark:bg-slate-800 text-slate-950 dark:text-slate-50">Done</option>
             </select>
             <button
               type="button"
               onClick={handleDelete}
-              className="p-1 rounded-md text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 opacity-0 group-hover:opacity-100 transition-all cursor-pointer"
+              className="p-1 rounded-md text-slate-500 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 opacity-0 group-hover:opacity-100 transition-all cursor-pointer"
               title="Delete task"
               aria-label={`Delete task ${task.title}`}
             >
@@ -59,29 +59,29 @@ export const TaskCard = memo(function TaskCard({ task }: TaskCardProps) {
         </div>
 
         <h4
-          className={`text-sm font-semibold leading-snug line-clamp-2 transition-all duration-200 ${
+          className={`text-sm font-black leading-snug line-clamp-2 transition-all duration-200 ${
             task.status === "done"
-              ? "line-through text-slate-400 dark:text-slate-500"
-              : "text-slate-900 dark:text-slate-100"
+              ? "line-through text-slate-500 dark:text-slate-400"
+              : "text-slate-950 dark:text-slate-50"
           }`}
         >
           {task.title}
         </h4>
 
         {task.description && (
-          <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 mt-1">
+          <p className="text-xs font-bold text-slate-700 dark:text-slate-300 line-clamp-2 mt-1">
             {task.description}
           </p>
         )}
       </div>
 
-      <div className="pt-2 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs">
+      <div className="pt-2.5 border-t-2 border-slate-900 dark:border-slate-700 flex items-center justify-between text-xs">
         <button
           type="button"
           onClick={() => setSelectedProjectId(task.projectId)}
-          className="flex items-center gap-1 text-[11px] text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium truncate max-w-[130px] transition-colors"
+          className="flex items-center gap-1 text-xs text-slate-800 dark:text-slate-200 hover:text-rose-600 dark:hover:text-rose-400 font-black truncate max-w-[130px] transition-colors"
         >
-          <FolderKanban className="w-3 h-3 shrink-0" />
+          <FolderKanban className="w-3.5 h-3.5 shrink-0 text-slate-700 dark:text-slate-300" />
           <span className="truncate">{task.projectName}</span>
         </button>
 
@@ -92,13 +92,13 @@ export const TaskCard = memo(function TaskCard({ task }: TaskCardProps) {
             size="xs"
           />
           <span
-            className={`flex items-center gap-1 text-[11px] font-medium ${
+            className={`flex items-center gap-1 text-xs font-mono font-bold ${
               isTaskOverdue
-                ? "text-rose-600 dark:text-rose-400 font-semibold"
-                : "text-slate-400"
+                ? "text-rose-600 dark:text-rose-400 font-black"
+                : "text-slate-700 dark:text-slate-300"
             }`}
           >
-            <Calendar className="w-3 h-3" />
+            <Calendar className="w-3.5 h-3.5" />
             <span>{formatDate(task.dueDate)}</span>
           </span>
         </div>
