@@ -54,7 +54,7 @@ export default function ProjectDetailClient({ id }: { id: string }) {
         </p>
         <Link
           href="/projects"
-          className="neo-btn bg-[#ff8585] text-slate-950 text-xs font-bold"
+          className="neo-btn neo-btn-brand text-xs font-bold"
         >
           Back to Projects
         </Link>
@@ -132,7 +132,7 @@ export default function ProjectDetailClient({ id }: { id: string }) {
                 <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight uppercase">
                   {project.name}
                 </h1>
-                <span className="text-rose-500 font-mono font-bold text-xl">\ \ \</span>
+                <span className="text-brand-accent font-mono font-bold text-xl">\ \ \</span>
               </div>
               <p className="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 mt-0.5">
                 {project.description}
@@ -143,7 +143,7 @@ export default function ProjectDetailClient({ id }: { id: string }) {
           <div className="flex flex-wrap items-center gap-2.5 shrink-0 self-start sm:self-auto">
             <div className="neo-card px-3 py-1.5 flex items-center gap-2 bg-white dark:bg-slate-900 text-xs font-bold">
               <span className="text-slate-500">Progress</span>
-              <span className="font-mono text-rose-500 font-black">
+              <span className="font-mono text-brand-accent font-black">
                 {project.progress}%
               </span>
             </div>
@@ -171,7 +171,7 @@ export default function ProjectDetailClient({ id }: { id: string }) {
             onClick={() => setActiveTab("tasks")}
             className={`px-4 py-2 rounded-lg text-xs font-extrabold flex items-center gap-1.5 transition-all cursor-pointer ${
               activeTab === "tasks"
-                ? "bg-[#ff8585] text-slate-950 border border-slate-900 shadow-[1.5px_1.5px_0px_rgba(0,0,0,0.9)]"
+                ? "brand-selected font-extrabold flex items-center gap-1.5"
                 : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
             }`}
           >
@@ -184,7 +184,7 @@ export default function ProjectDetailClient({ id }: { id: string }) {
             onClick={() => setActiveTab("credentials")}
             className={`px-4 py-2 rounded-lg text-xs font-extrabold flex items-center gap-1.5 transition-all cursor-pointer ${
               activeTab === "credentials"
-                ? "bg-[#fcd34d] text-slate-950 border border-slate-900 shadow-[1.5px_1.5px_0px_rgba(0,0,0,0.9)]"
+                ? "brand-selected font-extrabold flex items-center gap-1.5"
                 : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
             }`}
           >
@@ -197,7 +197,7 @@ export default function ProjectDetailClient({ id }: { id: string }) {
             onClick={() => setActiveTab("notes")}
             className={`px-4 py-2 rounded-lg text-xs font-extrabold flex items-center gap-1.5 transition-all cursor-pointer ${
               activeTab === "notes"
-                ? "bg-[#ff8585] text-slate-950 border border-slate-900 shadow-[1.5px_1.5px_0px_rgba(0,0,0,0.9)]"
+                ? "brand-selected font-extrabold flex items-center gap-1.5"
                 : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
             }`}
           >
@@ -210,7 +210,7 @@ export default function ProjectDetailClient({ id }: { id: string }) {
             onClick={() => setActiveTab("activity")}
             className={`px-4 py-2 rounded-lg text-xs font-extrabold flex items-center gap-1.5 transition-all cursor-pointer ${
               activeTab === "activity"
-                ? "bg-[#c084fc] text-slate-950 border border-slate-900 shadow-[1.5px_1.5px_0px_rgba(0,0,0,0.9)]"
+                ? "brand-selected font-extrabold flex items-center gap-1.5"
                 : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
             }`}
           >

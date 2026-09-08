@@ -75,7 +75,7 @@ export function ProjectListRow({ project }: ProjectListRowProps) {
         return {
           label: "IN PROGRESS",
           bg: "bg-[#ffe3e3] dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border-rose-300 dark:border-rose-800",
-          barColor: "bg-[#ff8585]",
+          barColor: "progress-brand",
         };
       case "completed":
         return {
@@ -112,7 +112,7 @@ export function ProjectListRow({ project }: ProjectListRowProps) {
           {getProjectIcon(project.icon)}
         </div>
         <div className="min-w-0">
-          <h4 className="font-extrabold text-sm text-slate-900 dark:text-slate-100 group-hover:text-rose-500 transition-colors truncate">
+          <h4 className="font-extrabold text-sm text-slate-900 dark:text-slate-100 group-hover:text-brand-500 transition-colors truncate">
             {project.name}
           </h4>
           <p className="text-[11px] font-medium text-slate-500 dark:text-slate-400 truncate">

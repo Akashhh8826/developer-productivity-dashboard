@@ -180,7 +180,7 @@ export function CreateProjectModal({ isOpen, onClose }: CreateProjectModalProps)
                   onClick={() => setSelectedIcon(item.type)}
                   className={`p-2 rounded-xl border flex flex-col items-center justify-center gap-1 transition-all cursor-pointer ${
                     isSelected
-                      ? "bg-[#ff8585] text-slate-950 border-slate-900 shadow-[1.5px_1.5px_0px_rgba(0,0,0,0.9)] scale-105 font-black"
+                      ? "brand-selected border scale-105 font-black"
                       : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-750"
                   }`}
                 >
@@ -197,7 +197,7 @@ export function CreateProjectModal({ isOpen, onClose }: CreateProjectModalProps)
         {/* Project Name */}
         <div className="space-y-1.5">
           <label className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
-            Project Name <span className="text-rose-500">*</span>
+            Project Name <span className="text-brand-accent">*</span>
           </label>
           <input
             type="text"
@@ -216,7 +216,7 @@ export function CreateProjectModal({ isOpen, onClose }: CreateProjectModalProps)
         {/* Description */}
         <div className="space-y-1.5">
           <label className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
-            Description & Architecture <span className="text-rose-500">*</span>
+            Description & Architecture <span className="text-brand-accent">*</span>
           </label>
           <textarea
             rows={2}
@@ -338,7 +338,7 @@ export function CreateProjectModal({ isOpen, onClose }: CreateProjectModalProps)
           </button>
           <button
             type="submit"
-            className="neo-btn bg-[#ff8585] text-slate-950 text-xs font-black shadow-neo-sm hover:bg-[#ff7070]"
+            className="neo-btn neo-btn-brand text-xs font-black shadow-neo-sm"
           >
             Create Project
           </button>

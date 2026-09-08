@@ -120,7 +120,7 @@ export function ProjectDetailModal() {
                 <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tight uppercase">
                   {project.name}
                 </h2>
-                <span className="text-rose-500 font-mono font-bold">\ \ \</span>
+                <span className="text-brand-accent font-mono font-bold">\ \ \</span>
               </div>
               <p className="text-xs font-medium text-slate-600 dark:text-slate-400 mt-0.5">
                 {project.description}
@@ -133,7 +133,7 @@ export function ProjectDetailModal() {
             {/* Progress Badge */}
             <div className="neo-card px-3 py-1.5 flex items-center gap-2 bg-white dark:bg-slate-900 text-xs font-bold">
               <span className="text-slate-500">Progress</span>
-              <span className="font-mono text-rose-500 font-black">
+              <span className="font-mono text-brand-accent font-black">
                 {project.progress}%
               </span>
             </div>
@@ -163,7 +163,7 @@ export function ProjectDetailModal() {
             onClick={() => setActiveTab("tasks")}
             className={`px-3.5 py-1.5 rounded-lg text-xs font-extrabold flex items-center gap-1.5 transition-all cursor-pointer ${
               activeTab === "tasks"
-                ? "bg-[#ff8585] text-slate-950 border border-slate-900 shadow-[1.5px_1.5px_0px_rgba(0,0,0,0.9)]"
+                ? "brand-selected font-extrabold flex items-center gap-1.5"
                 : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
             }`}
           >
@@ -176,7 +176,7 @@ export function ProjectDetailModal() {
             onClick={() => setActiveTab("credentials")}
             className={`px-3.5 py-1.5 rounded-lg text-xs font-extrabold flex items-center gap-1.5 transition-all cursor-pointer ${
               activeTab === "credentials"
-                ? "bg-[#fcd34d] text-slate-950 border border-slate-900 shadow-[1.5px_1.5px_0px_rgba(0,0,0,0.9)]"
+                ? "brand-selected font-extrabold flex items-center gap-1.5"
                 : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
             }`}
           >
@@ -189,7 +189,7 @@ export function ProjectDetailModal() {
             onClick={() => setActiveTab("notes")}
             className={`px-3.5 py-1.5 rounded-lg text-xs font-extrabold flex items-center gap-1.5 transition-all cursor-pointer ${
               activeTab === "notes"
-                ? "bg-[#ff8585] text-slate-950 border border-slate-900 shadow-[1.5px_1.5px_0px_rgba(0,0,0,0.9)]"
+                ? "brand-selected font-extrabold flex items-center gap-1.5"
                 : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
             }`}
           >
@@ -202,7 +202,7 @@ export function ProjectDetailModal() {
             onClick={() => setActiveTab("activity")}
             className={`px-3.5 py-1.5 rounded-lg text-xs font-extrabold flex items-center gap-1.5 transition-all cursor-pointer ${
               activeTab === "activity"
-                ? "bg-[#c084fc] text-slate-950 border border-slate-900 shadow-[1.5px_1.5px_0px_rgba(0,0,0,0.9)]"
+                ? "brand-selected font-extrabold flex items-center gap-1.5"
                 : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
             }`}
           >

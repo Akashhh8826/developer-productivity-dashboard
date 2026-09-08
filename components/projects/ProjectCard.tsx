@@ -79,7 +79,7 @@ export const ProjectCard = memo(function ProjectCard({ project }: ProjectCardPro
         return {
           label: "IN PROGRESS",
           bg: "bg-[#ffe3e3] dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border-rose-300 dark:border-rose-800",
-          barColor: "bg-[#ff8585]",
+          barColor: "progress-brand",
         };
       case "completed":
         return {
@@ -132,7 +132,7 @@ export const ProjectCard = memo(function ProjectCard({ project }: ProjectCardPro
               {getProjectIcon(project.icon)}
             </div>
             <div className="min-w-0">
-              <h3 className="font-black text-base text-slate-900 dark:text-slate-100 group-hover:text-rose-500 transition-colors truncate">
+              <h3 className="font-black text-base text-slate-900 dark:text-slate-100 group-hover:text-brand-500 transition-colors truncate">
                 {project.name}
               </h3>
               <p className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 truncate">

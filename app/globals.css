@@ -236,6 +236,65 @@ html.dark .neo-dock {
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8);
 }
 
+/* ---------------------------------------------------- */
+/* Brand Color Utilities (CSS Variable-based)            */
+/* These ensure palette switching works everywhere       */
+/* ---------------------------------------------------- */
+
+/* Primary accent background (e.g. active buttons, selected state) */
+.bg-brand-accent {
+  background-color: var(--brand-500);
+  color: #fff;
+}
+
+/* Neo-style accent button using brand colors */
+.neo-btn-brand {
+  background-color: var(--brand-400);
+  color: #18181b;
+}
+.neo-btn-brand:hover {
+  background-color: var(--brand-300);
+}
+
+/* Selected/active state highlight for tabs, icon pickers, etc. */
+.brand-selected {
+  background-color: var(--brand-400);
+  color: #18181b;
+  border-color: #18181b;
+  box-shadow: 1.5px 1.5px 0px rgba(0, 0, 0, 0.9);
+}
+
+html.dark .brand-selected {
+  background-color: var(--brand-500);
+  color: #fff;
+  border-color: var(--brand-700);
+}
+
+/* Soft brand tint background (for badges, highlights) */
+.bg-brand-soft {
+  background-color: var(--brand-100);
+  color: var(--brand-800);
+}
+
+html.dark .bg-brand-soft {
+  background-color: color-mix(in srgb, var(--brand-950) 60%, transparent);
+  color: var(--brand-300);
+}
+
+/* Brand text for accents */
+.text-brand-accent {
+  color: var(--brand-500);
+}
+
+html.dark .text-brand-accent {
+  color: var(--brand-400);
+}
+
+/* Progress bar fill with brand color */
+.progress-brand {
+  background-color: var(--brand-500);
+}
+
 /* Custom scrollbars */
 ::-webkit-scrollbar {
   width: 6px;
