@@ -8,7 +8,22 @@ export type ThemeMode = 'dark' | 'light';
 export type ColorPalette = 'indigo' | 'emerald' | 'cyan' | 'rose' | 'purple' | 'amber';
 export type ColorTheme = 'slate' | 'emerald' | 'sapphire' | 'sunset' | 'amethyst' | 'nordic';
 
-export type ProjectIconType = 'shopping-cart' | 'laptop' | 'smartphone' | 'megaphone' | 'gauge' | 'book-open' | 'shield' | 'database' | 'layers';
+export type ProjectIconType =
+  | 'shopping-cart'
+  | 'laptop'
+  | 'smartphone'
+  | 'megaphone'
+  | 'gauge'
+  | 'book-open'
+  | 'shield'
+  | 'database'
+  | 'layers'
+  | 'bot'
+  | 'cpu'
+  | 'cloud'
+  | 'gamepad'
+  | 'terminal'
+  | 'server';
 
 export interface User {
   id: string;

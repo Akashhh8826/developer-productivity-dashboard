@@ -21,7 +21,7 @@ export function RecentActivityCard() {
       case "credential_updated":
         return <KeyRound className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />;
       default:
-        return <Activity className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />;
+        return <Activity className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" />;
     }
   };
 

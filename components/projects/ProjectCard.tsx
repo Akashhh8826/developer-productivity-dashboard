@@ -14,6 +14,15 @@ import {
   Gauge,
   BookOpen,
   Folder,
+  Bot,
+  Database,
+  Cloud,
+  Shield,
+  Layers,
+  Gamepad2,
+  Terminal,
+  Server,
+  Cpu,
 } from "lucide-react";
 import { Project } from "@/types";
 import { formatDate } from "@/lib/utils";
@@ -41,6 +50,24 @@ export const ProjectCard = memo(function ProjectCard({ project }: ProjectCardPro
         return <Gauge className="w-5 h-5" />;
       case "book-open":
         return <BookOpen className="w-5 h-5" />;
+      case "bot":
+        return <Bot className="w-5 h-5" />;
+      case "database":
+        return <Database className="w-5 h-5" />;
+      case "cloud":
+        return <Cloud className="w-5 h-5" />;
+      case "shield":
+        return <Shield className="w-5 h-5" />;
+      case "layers":
+        return <Layers className="w-5 h-5" />;
+      case "gamepad":
+        return <Gamepad2 className="w-5 h-5" />;
+      case "terminal":
+        return <Terminal className="w-5 h-5" />;
+      case "server":
+        return <Server className="w-5 h-5" />;
+      case "cpu":
+        return <Cpu className="w-5 h-5" />;
       default:
         return <Folder className="w-5 h-5" />;
     }

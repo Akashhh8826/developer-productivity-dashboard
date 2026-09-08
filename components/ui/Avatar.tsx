@@ -33,7 +33,7 @@ export function Avatar({ src, name, size = "md", className }: AvatarProps) {
   // Generate consistent background color based on name string
   const getBgColor = (n: string) => {
     const colors = [
-      "bg-indigo-600 text-white",
+      "bg-brand-600 text-white",
       "bg-emerald-600 text-white",
       "bg-amber-600 text-white",
       "bg-rose-600 text-white",

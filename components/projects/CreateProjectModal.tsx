@@ -19,6 +19,14 @@ import {
   Megaphone,
   Gauge,
   BookOpen,
+  Bot,
+  Database,
+  Cloud,
+  Shield,
+  Gamepad2,
+  Terminal,
+  Server,
+  Cpu,
 } from "lucide-react";
 
 interface CreateProjectModalProps {
@@ -48,6 +56,14 @@ const ICONS_LIST: { type: ProjectIconType; label: string; icon: any }[] = [
   { type: "megaphone", label: "Marketing", icon: Megaphone },
   { type: "gauge", label: "SaaS / Analytics", icon: Gauge },
   { type: "book-open", label: "Education / LMS", icon: BookOpen },
+  { type: "bot", label: "AI & ML", icon: Bot },
+  { type: "database", label: "Data & Backend", icon: Database },
+  { type: "cloud", label: "Cloud & DevOps", icon: Cloud },
+  { type: "shield", label: "Cyber Security", icon: Shield },
+  { type: "layers", label: "API & Services", icon: Layers },
+  { type: "gamepad", label: "Game Dev", icon: Gamepad2 },
+  { type: "terminal", label: "CLI & Scripts", icon: Terminal },
+  { type: "server", label: "Infra & Systems", icon: Server },
 ];
 
 export function CreateProjectModal({ isOpen, onClose }: CreateProjectModalProps) {
@@ -75,19 +91,21 @@ export function CreateProjectModal({ isOpen, onClose }: CreateProjectModalProps)
     }
   };
 
-  const handleAddCustomTech = (e: React.KeyboardEvent | React.MouseEvent) => {
-    if ("key" in e && e.key !== "Enter") return;
-    e.preventDefault();
+  const handleAddCustomTech = (e?: React.SyntheticEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     const trimmed = customTechInput.trim();
     if (!trimmed) return;
     if (!selectedTechs.includes(trimmed)) {
-      setSelectedTechs([...selectedTechs, trimmed]);
+      setSelectedTechs((prev) => [...prev, trimmed]);
     }
     setCustomTechInput("");
   };
 
   const handleRemoveTech = (tech: string) => {
-    setSelectedTechs(selectedTechs.filter((t) => t !== tech));
+    setSelectedTechs((prev) => prev.filter((t) => t !== tech));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -125,6 +143,10 @@ export function CreateProjectModal({ isOpen, onClose }: CreateProjectModalProps)
     onClose();
   };
 
+  const allTechsToDisplay = Array.from(
+    new Set([...COMMON_TECH_STACKS, ...selectedTechs])
+  );
+
   return (
     <Modal
       isOpen={isOpen}
@@ -143,10 +165,11 @@ export function CreateProjectModal({ isOpen, onClose }: CreateProjectModalProps)
 
         {/* Project Icon Category Selection */}
         <div className="space-y-1.5">
-          <label className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
-            Category Icon
+          <label className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 flex items-center justify-between">
+            <span>Category Icon ({ICONS_LIST.length} categories)</span>
+            <span className="text-[10px] text-slate-400 font-medium">Select project archetype</span>
           </label>
-          <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2 max-h-48 overflow-y-auto p-1.5 border border-slate-200/80 dark:border-slate-800 rounded-xl bg-slate-50/50 dark:bg-slate-900/40">
             {ICONS_LIST.map((item) => {
               const IconComponent = item.icon;
               const isSelected = selectedIcon === item.type;
@@ -155,14 +178,14 @@ export function CreateProjectModal({ isOpen, onClose }: CreateProjectModalProps)
                   key={item.type}
                   type="button"
                   onClick={() => setSelectedIcon(item.type)}
-                  className={`p-2.5 rounded-xl border flex flex-col items-center gap-1 transition-all cursor-pointer ${
+                  className={`p-2 rounded-xl border flex flex-col items-center justify-center gap-1 transition-all cursor-pointer ${
                     isSelected
-                      ? "bg-[#ff8585] text-slate-950 border-slate-900 shadow-[1.5px_1.5px_0px_rgba(0,0,0,0.9)]"
-                      : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700 hover:bg-slate-50"
+                      ? "bg-[#ff8585] text-slate-950 border-slate-900 shadow-[1.5px_1.5px_0px_rgba(0,0,0,0.9)] scale-105 font-black"
+                      : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-750"
                   }`}
                 >
-                  <IconComponent className="w-4 h-4" />
-                  <span className="text-[10px] font-bold truncate max-w-full">
+                  <IconComponent className="w-4 h-4 shrink-0" />
+                  <span className="text-[10px] font-bold truncate max-w-full text-center">
                     {item.label}
                   </span>
                 </button>
@@ -211,25 +234,38 @@ export function CreateProjectModal({ isOpen, onClose }: CreateProjectModalProps)
         {/* Tech Stack Selection */}
         <div className="space-y-2">
           <label className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 flex items-center justify-between">
-            <span>Technology Tags</span>
-            <span className="text-[10px] font-normal text-slate-400">Click to toggle</span>
+            <span>Technology Tags ({selectedTechs.length} selected)</span>
+            <span className="text-[10px] font-normal text-slate-400">Click to toggle or add custom tags below</span>
           </label>
 
-          <div className="flex flex-wrap gap-1.5">
-            {COMMON_TECH_STACKS.map((tech) => {
+          <div className="flex flex-wrap gap-1.5 p-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/40 max-h-36 overflow-y-auto">
+            {allTechsToDisplay.map((tech) => {
               const isSelected = selectedTechs.includes(tech);
+              const isCustom = !COMMON_TECH_STACKS.includes(tech);
               return (
                 <button
                   key={tech}
                   type="button"
                   onClick={() => toggleTech(tech)}
-                  className={`px-2 py-0.5 text-[11px] font-bold rounded-md border transition-colors cursor-pointer ${
+                  className={`px-2.5 py-1 text-[11px] font-bold rounded-lg border transition-all cursor-pointer flex items-center gap-1.5 ${
                     isSelected
-                      ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900 border-slate-900"
-                      : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-slate-400"
+                      ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900 border-slate-900 shadow-xs font-bold"
+                      : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-slate-400"
                   }`}
                 >
-                  {tech}
+                  <span>{tech}</span>
+                  {isCustom && (
+                    <span
+                      onClick={(evt) => {
+                        evt.stopPropagation();
+                        handleRemoveTech(tech);
+                      }}
+                      className="p-0.5 hover:bg-rose-500 hover:text-white rounded transition-colors"
+                      title="Remove tag"
+                    >
+                      <X className="w-3 h-3 stroke-[2.5]" />
+                    </span>
+                  )}
                 </button>
               );
             })}
@@ -240,16 +276,22 @@ export function CreateProjectModal({ isOpen, onClose }: CreateProjectModalProps)
               type="text"
               value={customTechInput}
               onChange={(e) => setCustomTechInput(e.target.value)}
-              onKeyDown={handleAddCustomTech}
-              placeholder="Or type custom stack tag..."
-              className="flex-1 px-3 py-1.5 text-xs bg-white dark:bg-slate-800 border border-slate-900 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:outline-none"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  handleAddCustomTech(e);
+                }
+              }}
+              placeholder="Type custom tech tag & press Enter (e.g. Rust, Supabase)..."
+              className="flex-1 px-3 py-1.5 text-xs bg-white dark:bg-slate-800 border border-slate-900 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
             />
             <button
               type="button"
               onClick={handleAddCustomTech}
-              className="px-3 py-1.5 bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold rounded-lg transition-colors cursor-pointer"
+              className="px-3.5 py-1.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-xs font-bold rounded-lg transition-colors cursor-pointer hover:bg-slate-800 dark:hover:bg-slate-200 shadow-xs"
             >
-              Add
+              Add Tag
             </button>
           </div>
         </div>

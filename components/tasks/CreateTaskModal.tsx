@@ -109,7 +109,7 @@ export function CreateTaskModal({
         {/* Task Title */}
         <div className="space-y-1.5">
           <label className="text-xs font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-            <CheckSquare className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
+            <CheckSquare className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" />
             <span>Task Title <span className="text-rose-500">*</span></span>
           </label>
           <input
@@ -122,7 +122,7 @@ export function CreateTaskModal({
             placeholder="e.g. Implement OAuth token refresh handler"
             required
             autoFocus
-            className="w-full px-3.5 py-2.5 text-sm bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors shadow-sm"
+            className="w-full px-3.5 py-2.5 text-sm bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors shadow-sm"
           />
         </div>
 
@@ -130,14 +130,14 @@ export function CreateTaskModal({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-1.5">
             <label className="text-xs font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-              <FolderKanban className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
+              <FolderKanban className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" />
               <span>Project <span className="text-rose-500">*</span></span>
             </label>
             <select
               value={projectId}
               onChange={(e) => setProjectId(e.target.value)}
               required
-              className="w-full px-3.5 py-2.5 text-sm bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 cursor-pointer shadow-sm"
+              className="w-full px-3.5 py-2.5 text-sm bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 cursor-pointer shadow-sm"
             >
               {projects.map((p) => (
                 <option
@@ -153,7 +153,7 @@ export function CreateTaskModal({
 
           <div className="space-y-1.5">
             <label className="text-xs font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-              <UserIcon className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
+              <UserIcon className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" />
               <span>Assignee</span>
             </label>
             <input
@@ -161,7 +161,7 @@ export function CreateTaskModal({
               value={assigneeName}
               onChange={(e) => setAssigneeName(e.target.value)}
               placeholder="Assignee Name"
-              className="w-full px-3.5 py-2.5 text-sm bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm"
+              className="w-full px-3.5 py-2.5 text-sm bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 shadow-sm"
             />
           </div>
         </div>
@@ -170,13 +170,13 @@ export function CreateTaskModal({
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <div className="space-y-1.5">
             <label className="text-xs font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-              <Flag className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
+              <Flag className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" />
               <span>Priority</span>
             </label>
             <select
               value={priority}
               onChange={(e) => setPriority(e.target.value as TaskPriority)}
-              className="w-full px-3 py-2 text-xs font-medium bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer shadow-sm"
+              className="w-full px-3 py-2 text-xs font-medium bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-500 cursor-pointer shadow-sm"
             >
               <option value="low" className="bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100">Low</option>
               <option value="medium" className="bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100">Medium</option>
@@ -187,13 +187,13 @@ export function CreateTaskModal({
 
           <div className="space-y-1.5">
             <label className="text-xs font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-              <CheckSquare className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
+              <CheckSquare className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" />
               <span>Initial Status</span>
             </label>
             <select
               value={status}
               onChange={(e) => setStatus(e.target.value as TaskStatus)}
-              className="w-full px-3 py-2 text-xs font-medium bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer shadow-sm"
+              className="w-full px-3 py-2 text-xs font-medium bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-500 cursor-pointer shadow-sm"
             >
               <option value="todo" className="bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100">To Do</option>
               <option value="in-progress" className="bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100">In Progress</option>
@@ -203,14 +203,14 @@ export function CreateTaskModal({
 
           <div className="space-y-1.5">
             <label className="text-xs font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
+              <Calendar className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" />
               <span>Due Date</span>
             </label>
             <input
               type="date"
               value={dueDate}
               onChange={(e) => setDueDate(e.target.value)}
-              className="w-full px-3 py-2 text-xs font-medium bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 [color-scheme:light] dark:[color-scheme:dark] shadow-sm"
+              className="w-full px-3 py-2 text-xs font-medium bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-500 [color-scheme:light] dark:[color-scheme:dark] shadow-sm"
             />
           </div>
         </div>
@@ -218,7 +218,7 @@ export function CreateTaskModal({
         {/* Task Description */}
         <div className="space-y-1.5">
           <label className="text-xs font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-            <AlignLeft className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
+            <AlignLeft className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" />
             <span>Description / Acceptance Criteria</span>
           </label>
           <textarea
@@ -226,7 +226,7 @@ export function CreateTaskModal({
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Provide context, deliverables, or checklist items..."
-            className="w-full px-3.5 py-2.5 text-sm bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 resize-none transition-colors shadow-sm"
+            className="w-full px-3.5 py-2.5 text-sm bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 resize-none transition-colors shadow-sm"
           />
         </div>
 
@@ -241,7 +241,7 @@ export function CreateTaskModal({
           </button>
           <button
             type="submit"
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white text-xs font-semibold rounded-xl shadow-sm transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-brand-600 hover:bg-brand-700 active:bg-brand-800 text-white text-xs font-semibold rounded-xl shadow-sm transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-500/40"
           >
             <Plus className="w-4 h-4" />
             <span>Add Task</span>

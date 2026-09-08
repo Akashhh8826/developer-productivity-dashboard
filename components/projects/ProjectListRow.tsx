@@ -11,6 +11,15 @@ import {
   Gauge,
   BookOpen,
   Folder,
+  Bot,
+  Database,
+  Cloud,
+  Shield,
+  Layers,
+  Gamepad2,
+  Terminal,
+  Server,
+  Cpu,
 } from "lucide-react";
 import { Project } from "@/types";
 import { formatDate } from "@/lib/utils";
@@ -37,6 +46,24 @@ export function ProjectListRow({ project }: ProjectListRowProps) {
         return <Gauge className="w-4 h-4" />;
       case "book-open":
         return <BookOpen className="w-4 h-4" />;
+      case "bot":
+        return <Bot className="w-4 h-4" />;
+      case "database":
+        return <Database className="w-4 h-4" />;
+      case "cloud":
+        return <Cloud className="w-4 h-4" />;
+      case "shield":
+        return <Shield className="w-4 h-4" />;
+      case "layers":
+        return <Layers className="w-4 h-4" />;
+      case "gamepad":
+        return <Gamepad2 className="w-4 h-4" />;
+      case "terminal":
+        return <Terminal className="w-4 h-4" />;
+      case "server":
+        return <Server className="w-4 h-4" />;
+      case "cpu":
+        return <Cpu className="w-4 h-4" />;
       default:
         return <Folder className="w-4 h-4" />;
     }

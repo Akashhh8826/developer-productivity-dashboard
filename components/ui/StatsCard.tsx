@@ -27,7 +27,7 @@ export const StatsCard = memo(function StatsCard({
   const getVariantStyles = () => {
     switch (variant) {
       case "brand":
-        return "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400";
+        return "bg-brand-500/10 text-brand-600 dark:text-brand-400";
       case "emerald":
         return "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400";
       case "amber":

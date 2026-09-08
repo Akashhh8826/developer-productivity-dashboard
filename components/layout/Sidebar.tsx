@@ -74,9 +74,9 @@ export function Sidebar({ className }: SidebarProps) {
               key={item.href}
               href={item.href}
               className={cn(
-                "group flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500/30",
+                "group flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-brand-500/30",
                 isActive
-                  ? "bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-300 font-semibold shadow-sm shadow-indigo-500/10"
+                  ? "bg-brand-50 dark:bg-brand-950/60 text-brand-600 dark:text-brand-300 font-semibold shadow-sm shadow-brand-500/10"
                   : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/60"
               )}
               title={isCollapsed ? item.label : undefined}
@@ -85,7 +85,7 @@ export function Sidebar({ className }: SidebarProps) {
                 className={cn(
                   "w-5 h-5 shrink-0 transition-colors",
                   isActive
-                    ? "text-indigo-600 dark:text-indigo-400"
+                    ? "text-brand-600 dark:text-brand-400"
                     : "text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300"
                 )}
               />
@@ -97,7 +97,7 @@ export function Sidebar({ className }: SidebarProps) {
                   className={cn(
                     "px-2 py-0.5 text-xs font-mono rounded-full font-medium",
                     isActive
-                      ? "bg-indigo-200/60 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200"
+                      ? "bg-brand-200/60 text-brand-800 dark:bg-brand-900 dark:text-brand-200"
                       : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400"
                   )}
                 >

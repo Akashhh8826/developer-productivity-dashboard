@@ -59,7 +59,7 @@ export function UpcomingDeadlinesCard() {
             className="flex items-center justify-between gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer border border-transparent hover:border-slate-200 dark:hover:border-slate-700"
           >
             <div className="flex items-center gap-2 min-w-0">
-              <span className="w-2 h-2 rounded-full bg-indigo-500 shrink-0" />
+              <span className="w-2 h-2 rounded-full bg-brand-500 shrink-0" />
               <span className="text-xs font-bold text-slate-800 dark:text-slate-200 truncate">
                 {item.title}
               </span>
@@ -82,7 +82,7 @@ export function UpcomingDeadlinesCard() {
         <span className="font-semibold text-slate-500 dark:text-slate-400">
           5 impending targets
         </span>
-        <span className="font-bold text-indigo-600 dark:text-indigo-400 flex items-center gap-1">
+        <span className="font-bold text-brand-600 dark:text-brand-400 flex items-center gap-1">
           <span>Sprint Schedule</span>
           <ArrowRight className="w-3.5 h-3.5" />
         </span>

@@ -21,6 +21,14 @@ import {
   Trash2,
   Calendar,
   Layers,
+  Bot,
+  Database,
+  Cloud,
+  Shield,
+  Gamepad2,
+  Terminal,
+  Server,
+  Cpu,
 } from "lucide-react";
 import { ProjectNotesTab } from "./ProjectNotesTab";
 import { ProjectCredentialsTab } from "./ProjectCredentialsTab";
@@ -57,6 +65,24 @@ export function ProjectDetailModal() {
         return <Gauge className="w-6 h-6" />;
       case "book-open":
         return <BookOpen className="w-6 h-6" />;
+      case "bot":
+        return <Bot className="w-6 h-6" />;
+      case "database":
+        return <Database className="w-6 h-6" />;
+      case "cloud":
+        return <Cloud className="w-6 h-6" />;
+      case "shield":
+        return <Shield className="w-6 h-6" />;
+      case "layers":
+        return <Layers className="w-6 h-6" />;
+      case "gamepad":
+        return <Gamepad2 className="w-6 h-6" />;
+      case "terminal":
+        return <Terminal className="w-6 h-6" />;
+      case "server":
+        return <Server className="w-6 h-6" />;
+      case "cpu":
+        return <Cpu className="w-6 h-6" />;
       default:
         return <Folder className="w-6 h-6" />;
     }

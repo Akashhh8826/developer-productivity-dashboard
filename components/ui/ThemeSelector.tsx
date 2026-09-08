@@ -43,12 +43,12 @@ export function ThemeSelector() {
       <button
         type="button"
         onClick={toggleMode}
-        className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+        className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-500/20"
         title={`Switch to ${mode === "dark" ? "Light" : "Dark"} Mode`}
         aria-label="Toggle dark/light mode"
       >
         {mode === "dark" ? (
-          <Moon className="w-4 h-4 text-indigo-400" />
+          <Moon className="w-4 h-4 text-brand-400" />
         ) : (
           <Sun className="w-4 h-4 text-amber-500" />
         )}
@@ -58,7 +58,7 @@ export function ThemeSelector() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700/80 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+        className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700/80 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-500/20"
         title="Choose color accent theme"
         aria-label="Color theme palette selector"
       >
@@ -99,7 +99,7 @@ export function ThemeSelector() {
                     : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
                 }`}
               >
-                <Moon className="w-3.5 h-3.5 text-indigo-400" />
+                <Moon className="w-3.5 h-3.5 text-brand-400" />
                 <span>Dark</span>
               </button>
             </div>
@@ -138,7 +138,7 @@ export function ThemeSelector() {
                     <span>{p.name}</span>
                   </div>
 
-                  {isSelected && <Check className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400 stroke-[3]" />}
+                  {isSelected && <Check className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400 stroke-[3]" />}
                 </button>
               );
             })}

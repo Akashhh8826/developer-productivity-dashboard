@@ -19,7 +19,7 @@ export function ProgressOverviewChart() {
     <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 sm:p-6 shadow-sm">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
-          <div className="p-1.5 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400">
+          <div className="p-1.5 rounded-lg bg-brand-50 dark:bg-brand-950/60 text-brand-600 dark:text-brand-400">
             <PieChart className="w-4 h-4" />
           </div>
           <h2 className="font-semibold text-base text-slate-900 dark:text-slate-100">
@@ -50,7 +50,7 @@ export function ProgressOverviewChart() {
                 cx="50"
                 cy="50"
                 r={radius}
-                className="text-indigo-600 stroke-current transition-all duration-700 ease-out"
+                className="text-brand-600 stroke-current transition-all duration-700 ease-out"
                 strokeWidth="9"
                 strokeDasharray={circumference}
                 strokeDashoffset={strokeDashoffset}
@@ -88,7 +88,7 @@ export function ProgressOverviewChart() {
             >
               <div className="flex items-center justify-between mb-1.5">
                 <div className="flex items-center gap-2 min-w-0">
-                  <span className="text-xs font-semibold text-slate-900 dark:text-slate-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors truncate">
+                  <span className="text-xs font-semibold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors truncate">
                     {project.name}
                   </span>
                   <StatusBadge status={project.status} size="sm" />
@@ -97,7 +97,7 @@ export function ProgressOverviewChart() {
                   <span className="text-xs font-bold text-slate-700 dark:text-slate-300">
                     {project.progress}%
                   </span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-600 transition-colors" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-600 transition-colors" />
                 </div>
               </div>
               <ProgressBar progress={project.progress} size="sm" />

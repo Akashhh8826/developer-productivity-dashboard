@@ -69,9 +69,9 @@ export function FilterDropdown({
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         className={cn(
-          "inline-flex items-center justify-between gap-2 px-3 py-2 text-sm font-medium rounded-lg border transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500/20",
+          "inline-flex items-center justify-between gap-2 px-3 py-2 text-sm font-medium rounded-lg border transition-all focus:outline-none focus:ring-2 focus:ring-brand-500/20",
           isFiltered
-            ? "bg-indigo-50/80 dark:bg-indigo-950/40 border-indigo-200 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300"
+            ? "bg-brand-50/80 dark:bg-brand-950/40 border-brand-200 dark:border-brand-800 text-brand-700 dark:text-brand-300"
             : "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-850"
         )}
       >
@@ -83,7 +83,7 @@ export function FilterDropdown({
         <ChevronDown
           className={cn(
             "w-4 h-4 text-slate-400 transition-transform duration-200 shrink-0",
-            isOpen && "rotate-180 text-indigo-600"
+            isOpen && "rotate-180 text-brand-600"
           )}
         />
       </button>
@@ -107,7 +107,7 @@ export function FilterDropdown({
                 className={cn(
                   "w-full text-left px-3.5 py-2 text-sm flex items-center justify-between transition-colors",
                   isSelected
-                    ? "bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 font-medium"
+                    ? "bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-300 font-medium"
                     : "text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/60"
                 )}
               >
@@ -118,7 +118,7 @@ export function FilterDropdown({
                       {option.count}
                     </span>
                   )}
-                  {isSelected && <Check className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />}
+                  {isSelected && <Check className="w-4 h-4 text-brand-600 dark:text-brand-400" />}
                 </div>
               </button>
             );

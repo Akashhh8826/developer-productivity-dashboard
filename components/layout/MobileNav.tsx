@@ -68,7 +68,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileNavProps) {
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-slate-200 dark:border-slate-800">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white">
+            <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white">
               <Code2 className="w-5 h-5" />
             </div>
             <span className="font-bold text-slate-900 dark:text-slate-100">
@@ -119,7 +119,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileNavProps) {
                 className={cn(
                   "flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-medium transition-colors",
                   isActive
-                    ? "bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-300 font-semibold"
+                    ? "bg-brand-50 dark:bg-brand-950/60 text-brand-600 dark:text-brand-300 font-semibold"
                     : "text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800"
                 )}
               >
@@ -171,7 +171,7 @@ export function MobileBottomNav() {
               className={cn(
                 "flex flex-col items-center justify-center py-1 px-3 rounded-lg text-[10px] font-medium transition-colors",
                 isActive
-                  ? "text-indigo-600 dark:text-indigo-400 font-semibold"
+                  ? "text-brand-600 dark:text-brand-400 font-semibold"
                   : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
               )}
             >

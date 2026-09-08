@@ -124,7 +124,7 @@ export function FloatingDock() {
             {mode === "dark" ? (
               <Sun className="w-4 h-4 text-amber-400" />
             ) : (
-              <Moon className="w-4 h-4 text-indigo-600" />
+              <Moon className="w-4 h-4 text-brand-600" />
             )}
           </button>
         </div>

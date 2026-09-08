@@ -133,12 +133,12 @@ export function Navbar({ onOpenMobileMenu }: NavbarProps) {
             type="button"
             onClick={() => refreshData()}
             disabled={isLoading}
-            className="p-2 text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 transition-colors"
+            className="p-2 text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500/20 transition-colors"
             aria-label="Refresh dashboard data"
             title="Refresh dashboard data"
           >
             <RefreshCw
-              className={`w-4 h-4 ${isLoading ? "animate-spin text-indigo-600" : ""}`}
+              className={`w-4 h-4 ${isLoading ? "animate-spin text-brand-600" : ""}`}
             />
           </button>
 
@@ -147,7 +147,7 @@ export function Navbar({ onOpenMobileMenu }: NavbarProps) {
             <button
               type="button"
               onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
-              className="relative p-2 text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 transition-colors"
+              className="relative p-2 text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500/20 transition-colors"
               aria-expanded={isNotificationsOpen}
               aria-label="Notifications"
             >
@@ -163,7 +163,7 @@ export function Navbar({ onOpenMobileMenu }: NavbarProps) {
                   <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                     Notifications
                   </h4>
-                  <span className="text-[11px] text-indigo-600 font-medium cursor-pointer hover:underline">
+                  <span className="text-[11px] text-brand-600 font-medium cursor-pointer hover:underline">
                     Mark all read
                   </span>
                 </div>
@@ -208,7 +208,7 @@ export function Navbar({ onOpenMobileMenu }: NavbarProps) {
             <button
               type="button"
               onClick={() => setIsProfileOpen(!isProfileOpen)}
-              className="flex items-center gap-2 p-1 rounded-full hover:ring-2 hover:ring-slate-300 dark:hover:ring-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 transition-all"
+              className="flex items-center gap-2 p-1 rounded-full hover:ring-2 hover:ring-slate-300 dark:hover:ring-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500/40 transition-all"
               aria-expanded={isProfileOpen}
               aria-label="User profile menu"
             >
@@ -229,7 +229,7 @@ export function Navbar({ onOpenMobileMenu }: NavbarProps) {
                   <p className="text-xs text-slate-500 dark:text-slate-400 truncate">
                     {user?.email || "alex.chen@devops.internal"}
                   </p>
-                  <span className="inline-block mt-1 px-2 py-0.5 text-[10px] font-medium rounded bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300">
+                  <span className="inline-block mt-1 px-2 py-0.5 text-[10px] font-medium rounded bg-brand-50 text-brand-700 dark:bg-brand-950/60 dark:text-brand-300">
                     {user?.role || "Senior Full-Stack Engineer"}
                   </span>
                 </div>
