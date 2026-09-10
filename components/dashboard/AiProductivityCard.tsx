@@ -53,7 +53,7 @@ export function AiProductivityCard() {
         <button
           type="button"
           onClick={handleNextInsight}
-          className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded bg-white text-slate-900 border border-slate-900 shadow-[1px_1px_0px_rgba(0,0,0,0.9)] cursor-pointer hover:bg-slate-50 transition-colors active:scale-95"
+          className="inline-flex items-center gap-1 text-[11px] font-black px-2 py-0.5 rounded bg-[#7dd3fc] text-slate-900 border border-slate-900 shadow-[1px_1px_0px_rgba(0,0,0,0.9)] cursor-pointer hover:bg-[#38bdf8] transition-colors active:scale-95"
         >
           <RefreshCw className={`w-3 h-3 ${isRefreshing ? "animate-spin" : ""}`} />
           <span>New Tip</span>

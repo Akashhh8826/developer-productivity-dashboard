@@ -39,7 +39,7 @@ export function ProjectsOverviewCard() {
           <select
             value={filterPeriod}
             onChange={(e) => setFilterPeriod(e.target.value)}
-            className="text-[11px] font-bold bg-white text-slate-900 border border-slate-900 rounded-md px-2 py-0.5 pr-5 appearance-none focus:outline-none cursor-pointer shadow-[1px_1px_0px_rgba(0,0,0,0.9)] hover:bg-slate-50 transition-colors"
+            className="text-[11px] font-black bg-[#fbbf24] text-slate-900 border border-slate-900 rounded-md px-2 py-0.5 pr-5 appearance-none focus:outline-none cursor-pointer shadow-[1px_1px_0px_rgba(0,0,0,0.9)] hover:bg-[#f59e0b] transition-colors"
           >
             <option value="This Month">This Month</option>
             <option value="All Time">All Time</option>
