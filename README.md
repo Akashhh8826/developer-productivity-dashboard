@@ -1,72 +1,84 @@
-# DevPulse - Developer Productivity Dashboard
+# DevPulse — Developer Productivity Dashboard
 
-A modern, responsive web application built with Next.js, TypeScript, and Tailwind CSS to track developer productivity, manage projects, and organize sprint tasks.
+> A modern, responsive developer productivity dashboard for tracking full-stack projects, sprint tasks, and delivery velocity. Built with Next.js 15, TypeScript, and Tailwind CSS.
 
-## 🔗 Live Demo
-- **Live Website (GitHub Pages):** [[https://akashhh8826.github.io/developer-productivity-dashboard/](https://akashhh8826.github.io/developer-productivity-](https://akashhh8826.github.io/developer-productivity-dashboard/))
-- **GitHub Repository:** [https://github.com/Akashhh8826/developer-productivity-dashboard](https://github.com/Akashhh8826/developer-productivity-dashboard)
+## 🔗 Links
 
----
-
-## 📸 Screenshots
-
-### 1. Dashboard Overview
-![Dashboard](./docs/screenshots/dashboard.png)
-
-### 2. Projects Page
-![Projects](./docs/screenshots/projects.png)
-
-### 3. Sprint Tasks Page
-![Tasks](./docs/screenshots/tasks.png)
+- **Live Demo:** https://akashhh8826.github.io/developer-productivity-dashboard/
+- **GitHub Repo:** https://github.com/Akashhh8826/developer-productivity-dashboard
 
 ---
 
 ## ✨ Features
 
-- **Dashboard:** Overview of total projects, tasks, completed tasks, pending tasks, and upcoming deadlines with progress charts.
-- **Projects Management:** View all ongoing projects, progress bars, and tech stack details.
-- **Task Tracker:** Filter tasks by status, priority, and project, with interactive checkboxes to mark tasks as done.
-- **Theme Support:** Clean Neo-brutalist UI design with multiple color themes.
-- **Responsive Design:** Works smoothly on mobile, tablet, and desktop screens.
+- **Dashboard** — Overview of total projects, tasks, completed/pending tasks, and upcoming deadlines with live progress charts
+- **Projects Management** — View all ongoing projects, progress bars, tech stack tags, and detailed project modals
+- **Task Tracker** — Filter tasks by status, priority, and project with interactive checkboxes
+- **AI Productivity Insight** — Smart suggestions panel based on project activity
+- **Theme Support** — Neo-brutalist UI with multiple color palette options (Sapphire Cyan, Rose, etc.)
+- **Responsive Design** — Fully optimized for mobile, tablet, and desktop
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend Framework:** Next.js 15 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Icons:** Lucide React
-- **Hosting:** GitHub Pages & Vercel
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 15 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Icons | Lucide React |
+| Hosting | GitHub Pages |
 
 ---
 
-## 🚀 How to Run Locally
+## 🚀 Getting Started
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Akashhh8826/developer-productivity-dashboard.git
-   ```
+### 1. Clone the repository
 
-2. **Navigate into the project folder:**
-   ```bash
-   cd developer-productivity-dashboard
-   ```
+```bash
+git clone https://github.com/Akashhh8826/developer-productivity-dashboard.git
+cd developer-productivity-dashboard
+```
 
-3. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+### 2. Install dependencies
 
-4. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
+```bash
+npm install
+```
 
-5. **Open in browser:**
-   Open your browser at the local server address shown in the terminal.
+### 3. Start the development server
+
+```bash
+npm run dev
+```
+
+Open your browser at the local server address shown in the terminal (usually `http://localhost:3000`).
+
+---
+
+## 📁 Project Structure
+
+```
+├── app/                  # Next.js App Router pages
+│   ├── page.tsx          # Dashboard page
+│   ├── projects/         # Projects page
+│   ├── tasks/            # Tasks page
+│   └── settings/         # Settings page
+├── components/           # Reusable UI components
+│   ├── dashboard/        # Dashboard-specific components
+│   ├── layout/           # Navbar, Sidebar, MobileNav
+│   ├── projects/         # Project cards and modals
+│   ├── tasks/            # Task list and rows
+│   └── ui/               # Generic UI primitives
+├── context/              # React context (DataContext)
+├── lib/                  # Utilities and data services
+├── data/                 # Mock JSON data
+└── types/                # TypeScript type definitions
+```
 
 ---
 
 ## 👤 Author
-- **Akash** - [GitHub Profile](https://github.com/Akashhh8826)
+
+**Akash** — https://github.com/Akashhh8826
