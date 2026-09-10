@@ -78,7 +78,7 @@ export function FloatingDock() {
               type="button"
               onClick={() => setShowQuickMenu(!showQuickMenu)}
               title="Quick Add"
-              className="p-2 sm:p-2.5 rounded-full bg-[#ff8585] text-slate-950 border border-slate-900 dark:border-slate-600 shadow-[1.5px_1.5px_0px_rgba(0,0,0,0.9)] hover:scale-105 active:scale-95 transition-transform flex items-center justify-center cursor-pointer font-bold"
+              className="p-2 sm:p-2.5 rounded-full bg-brand-logo border border-slate-900 dark:border-slate-600 shadow-[1.5px_1.5px_0px_rgba(0,0,0,0.9)] hover:scale-105 active:scale-95 transition-transform flex items-center justify-center cursor-pointer font-bold"
             >
               <Plus className={`w-4 h-4 transition-transform ${showQuickMenu ? "rotate-45" : ""}`} />
             </button>

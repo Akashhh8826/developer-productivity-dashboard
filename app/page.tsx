@@ -36,7 +36,7 @@ export default function DashboardPage() {
           <button
             type="button"
             onClick={() => setIsCreateProjectOpen(true)}
-            className="neo-btn bg-[#ff8585] text-slate-950 hover:bg-[#ff7070] text-xs font-black shadow-neo uppercase tracking-wider"
+            className="neo-btn neo-btn-primary text-xs font-black shadow-neo uppercase tracking-wider"
           >
             <Plus className="w-4 h-4 stroke-[3]" />
             <span>New Project</span>

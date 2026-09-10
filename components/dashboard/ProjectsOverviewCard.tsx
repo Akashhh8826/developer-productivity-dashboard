@@ -124,7 +124,7 @@ export function ProjectsOverviewCard() {
         <span className="font-bold text-slate-600 dark:text-slate-400">
           Total Pipelines
         </span>
-        <span className="font-mono font-extrabold text-slate-900 dark:text-slate-100 px-2.5 py-0.5 rounded-full bg-rose-50 dark:bg-rose-950/50 border border-rose-200 dark:border-rose-900 text-rose-700 dark:text-rose-300">
+        <span className="font-mono font-extrabold px-2.5 py-0.5 rounded-full border brand-pill">
           {projects.length} Active Workspaces
         </span>
       </div>

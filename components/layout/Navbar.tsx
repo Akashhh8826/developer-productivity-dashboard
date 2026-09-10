@@ -87,7 +87,7 @@ export function Navbar({ onOpenMobileMenu }: NavbarProps) {
             href="/"
             className="flex items-center gap-2.5 font-black text-slate-900 dark:text-slate-100 tracking-tight text-base sm:text-lg hover:opacity-90 transition-opacity rounded-lg"
           >
-            <div className="w-8 h-8 rounded-xl bg-[#ff8585] border border-slate-900 flex items-center justify-center text-slate-950 shadow-[1.5px_1.5px_0px_rgba(0,0,0,0.9)]">
+            <div className="w-8 h-8 rounded-xl bg-brand-logo border border-slate-900 flex items-center justify-center shadow-[1.5px_1.5px_0px_rgba(0,0,0,0.9)]">
               <Code2 className="w-5 h-5 stroke-[2.5]" />
             </div>
             <span className="hidden sm:inline">DevPulse</span>
@@ -229,7 +229,7 @@ export function Navbar({ onOpenMobileMenu }: NavbarProps) {
                   <p className="text-xs text-slate-500 dark:text-slate-400 truncate">
                     {user?.email || "alex.chen@devops.internal"}
                   </p>
-                  <span className="inline-block mt-1 px-2 py-0.5 text-[10px] font-medium rounded bg-brand-50 text-brand-700 dark:bg-brand-950/60 dark:text-brand-300">
+                  <span className="inline-block mt-1 px-2 py-0.5 text-[10px] font-medium rounded brand-role-badge">
                     {user?.role || "Senior Full-Stack Engineer"}
                   </span>
                 </div>

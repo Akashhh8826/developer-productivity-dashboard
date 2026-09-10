@@ -82,7 +82,7 @@ export default function ProjectsPage() {
           <button
             type="button"
             onClick={() => setIsCreateModalOpen(true)}
-            className="neo-btn bg-[#ff8585] text-slate-950 hover:bg-[#ff7070] text-xs font-black shadow-neo uppercase tracking-wider"
+            className="neo-btn neo-btn-primary text-xs font-black shadow-neo uppercase tracking-wider"
           >
             <Plus className="w-4 h-4 stroke-[3]" />
             <span>New Project</span>
@@ -143,7 +143,7 @@ export default function ProjectsPage() {
               onClick={() => setViewMode("grid")}
               className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
                 viewMode === "grid"
-                  ? "bg-[#ff8585] text-slate-950 font-bold border border-slate-900"
+                  ? "brand-selected"
                   : "text-slate-600 dark:text-slate-400 hover:text-slate-950"
               }`}
               title="Grid View"
@@ -155,7 +155,7 @@ export default function ProjectsPage() {
               onClick={() => setViewMode("list")}
               className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
                 viewMode === "list"
-                  ? "bg-[#ff8585] text-slate-950 font-bold border border-slate-900"
+                  ? "brand-selected"
                   : "text-slate-600 dark:text-slate-400 hover:text-slate-950"
               }`}
               title="List View"

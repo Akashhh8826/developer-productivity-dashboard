@@ -101,7 +101,7 @@ export function CreateNoteModal({
           </button>
           <button
             type="submit"
-            className="neo-btn bg-[#ff8585] text-slate-950 text-xs font-black shadow-neo-sm hover:bg-[#ff7070]"
+            className="neo-btn neo-btn-primary text-xs font-black shadow-neo-sm"
           >
             Save Note
           </button>

@@ -143,7 +143,7 @@ export function ProjectNotesTab({ project }: ProjectNotesTabProps) {
         <button
           type="button"
           onClick={() => setIsCreateModalOpen(true)}
-          className="neo-btn bg-[#ff8585] text-slate-950 text-xs font-black shadow-neo-sm hover:bg-[#ff7070]"
+          className="neo-btn neo-btn-primary text-xs font-black shadow-neo-sm"
         >
           <Plus className="w-3.5 h-3.5 stroke-[3]" />
           <span>Add Note</span>

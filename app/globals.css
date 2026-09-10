@@ -189,35 +189,29 @@ html.dark .neo-btn:hover {
   box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.95);
 }
 
-/* Neo Header Accent Strips */
-.neo-header-coral {
-  background-color: #ff8585;
+/* ---------------------------------------------------- */
+/* NeoCard Header Colors — all driven by brand palette  */
+/* ---------------------------------------------------- */
+.neo-header-coral,
+.neo-header-yellow,
+.neo-header-purple,
+.neo-header-mint,
+.neo-header-blue,
+.neo-header-brand {
+  background-color: var(--brand-400);
   color: #18181b;
   border-bottom: 1.5px solid #18181b;
 }
 
-.neo-header-yellow {
-  background-color: #fcd34d;
-  color: #18181b;
-  border-bottom: 1.5px solid #18181b;
-}
-
-.neo-header-purple {
-  background-color: #c084fc;
-  color: #18181b;
-  border-bottom: 1.5px solid #18181b;
-}
-
-.neo-header-mint {
-  background-color: #6ee7b7;
-  color: #18181b;
-  border-bottom: 1.5px solid #18181b;
-}
-
-.neo-header-blue {
-  background-color: #7dd3fc;
-  color: #18181b;
-  border-bottom: 1.5px solid #18181b;
+html.dark .neo-header-coral,
+html.dark .neo-header-yellow,
+html.dark .neo-header-purple,
+html.dark .neo-header-mint,
+html.dark .neo-header-blue,
+html.dark .neo-header-brand {
+  background-color: var(--brand-600);
+  color: #fff;
+  border-bottom-color: var(--brand-800);
 }
 
 /* Floating Bottom Dock */
@@ -237,14 +231,46 @@ html.dark .neo-dock {
 }
 
 /* ---------------------------------------------------- */
-/* Brand Color Utilities (CSS Variable-based)            */
-/* These ensure palette switching works everywhere       */
+/* Brand Color Utilities (CSS Variable-based)           */
+/* Palette switching instantly reflects everywhere      */
 /* ---------------------------------------------------- */
 
-/* Primary accent background (e.g. active buttons, selected state) */
+/* Primary accent background */
 .bg-brand-accent {
   background-color: var(--brand-500);
   color: #fff;
+}
+
+/* Logo / app icon brand bg */
+.bg-brand-logo {
+  background-color: var(--brand-400);
+  color: #18181b;
+}
+
+html.dark .bg-brand-logo {
+  background-color: var(--brand-500);
+  color: #fff;
+}
+
+/* Primary CTA button (e.g. "+ New Project", "+ New Task") */
+.neo-btn-primary {
+  background-color: var(--brand-400);
+  color: #18181b;
+  border-color: #18181b;
+}
+
+.neo-btn-primary:hover {
+  background-color: var(--brand-300);
+}
+
+html.dark .neo-btn-primary {
+  background-color: var(--brand-500);
+  color: #fff;
+  border-color: var(--brand-700);
+}
+
+html.dark .neo-btn-primary:hover {
+  background-color: var(--brand-400);
 }
 
 /* Neo-style accent button using brand colors */
@@ -252,6 +278,7 @@ html.dark .neo-dock {
   background-color: var(--brand-400);
   color: #18181b;
 }
+
 .neo-btn-brand:hover {
   background-color: var(--brand-300);
 }
@@ -268,6 +295,38 @@ html.dark .brand-selected {
   background-color: var(--brand-500);
   color: #fff;
   border-color: var(--brand-700);
+}
+
+/* Sidebar active nav item */
+.nav-item-active {
+  background-color: var(--brand-50);
+  color: var(--brand-700);
+  font-weight: 600;
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--brand-500) 15%, transparent);
+}
+
+html.dark .nav-item-active {
+  background-color: color-mix(in srgb, var(--brand-950) 60%, transparent);
+  color: var(--brand-300);
+}
+
+.nav-item-active-icon {
+  color: var(--brand-600);
+}
+
+html.dark .nav-item-active-icon {
+  color: var(--brand-400);
+}
+
+/* Nav item badge (active) */
+.nav-badge-active {
+  background-color: color-mix(in srgb, var(--brand-200) 60%, transparent);
+  color: var(--brand-800);
+}
+
+html.dark .nav-badge-active {
+  background-color: var(--brand-900);
+  color: var(--brand-200);
 }
 
 /* Soft brand tint background (for badges, highlights) */
@@ -290,9 +349,107 @@ html.dark .text-brand-accent {
   color: var(--brand-400);
 }
 
+/* Brand text darker */
+.text-brand-strong {
+  color: var(--brand-600);
+}
+
+html.dark .text-brand-strong {
+  color: var(--brand-400);
+}
+
 /* Progress bar fill with brand color */
 .progress-brand {
   background-color: var(--brand-500);
+}
+
+/* Stats card icon backgrounds — graduated brand shades */
+.stat-icon-1 {
+  background-color: var(--brand-400);
+  color: #18181b;
+}
+
+html.dark .stat-icon-1 {
+  background-color: var(--brand-600);
+  color: #fff;
+}
+
+.stat-icon-2 {
+  background-color: var(--brand-300);
+  color: #18181b;
+}
+
+html.dark .stat-icon-2 {
+  background-color: var(--brand-500);
+  color: #fff;
+}
+
+.stat-icon-3 {
+  background-color: var(--brand-500);
+  color: #fff;
+}
+
+html.dark .stat-icon-3 {
+  background-color: var(--brand-700);
+  color: var(--brand-200);
+}
+
+.stat-icon-4 {
+  background-color: var(--brand-200);
+  color: var(--brand-900);
+}
+
+html.dark .stat-icon-4 {
+  background-color: var(--brand-800);
+  color: var(--brand-100);
+}
+
+.stat-icon-5 {
+  background-color: var(--brand-100);
+  color: var(--brand-800);
+}
+
+html.dark .stat-icon-5 {
+  background-color: var(--brand-900);
+  color: var(--brand-200);
+}
+
+/* Role/tag badge in profile dropdown */
+.brand-role-badge {
+  background-color: var(--brand-50);
+  color: var(--brand-700);
+}
+
+html.dark .brand-role-badge {
+  background-color: color-mix(in srgb, var(--brand-950) 60%, transparent);
+  color: var(--brand-300);
+}
+
+/* Sidebar sprint progress bar */
+.sidebar-progress-bar {
+  background-color: var(--brand-500);
+}
+
+/* Floating dock active icon */
+.dock-icon-active {
+  color: var(--brand-500);
+}
+
+html.dark .dock-icon-active {
+  color: var(--brand-400);
+}
+
+/* "Active Workspaces" pill in ProjectsOverviewCard footer */
+.brand-pill {
+  background-color: var(--brand-50);
+  color: var(--brand-700);
+  border-color: var(--brand-200);
+}
+
+html.dark .brand-pill {
+  background-color: color-mix(in srgb, var(--brand-950) 50%, transparent);
+  color: var(--brand-300);
+  border-color: var(--brand-900);
 }
 
 /* Custom scrollbars */

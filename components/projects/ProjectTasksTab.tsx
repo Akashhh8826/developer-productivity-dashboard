@@ -46,7 +46,7 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
               onClick={() => setViewMode("list")}
               className={`p-1.5 rounded text-xs font-black transition-colors cursor-pointer flex items-center gap-1 ${
                 viewMode === "list"
-                  ? "bg-[#ff8585] text-slate-950 shadow-xs"
+                  ? "brand-selected"
                   : "text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white"
               }`}
             >
@@ -58,7 +58,7 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
               onClick={() => setViewMode("board")}
               className={`p-1.5 rounded text-xs font-black transition-colors cursor-pointer flex items-center gap-1 ${
                 viewMode === "board"
-                  ? "bg-[#ff8585] text-slate-950 shadow-xs"
+                  ? "brand-selected"
                   : "text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white"
               }`}
             >
@@ -71,7 +71,7 @@ export function ProjectTasksTab({ project }: ProjectTasksTabProps) {
         <button
           type="button"
           onClick={() => setIsCreateModalOpen(true)}
-          className="neo-btn bg-[#ff8585] text-slate-950 text-xs font-black shadow-neo-sm hover:bg-[#ff7070]"
+          className="neo-btn neo-btn-primary text-xs font-black shadow-neo-sm"
         >
           <Plus className="w-3.5 h-3.5 stroke-[3]" />
           <span>Add Task</span>
