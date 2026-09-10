@@ -47,7 +47,7 @@ export function RecentActivityCard() {
       headerColor="purple"
       headerIcon={<Activity className="w-4 h-4" />}
       headerRight={
-        <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-white dark:bg-slate-800 border border-slate-900 dark:border-slate-600 shadow-[1px_1px_0px_rgba(0,0,0,0.9)] cursor-pointer hover:bg-slate-50">
+        <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-white text-slate-900 border border-slate-900 shadow-[1px_1px_0px_rgba(0,0,0,0.9)] cursor-pointer hover:bg-slate-50 transition-colors">
           Live Stream
         </span>
       }
