@@ -32,37 +32,38 @@ export function NeoStatsRow() {
       value: stats.totalProjects || 6,
       change: "+2 this month",
       icon: <FolderKanban className="w-5 h-5" />,
-      colorClass: "stat-icon-1",
+      colorClass: "bg-[#ff8585] text-slate-900",       // coral
     },
     {
       label: "Total Tasks",
       value: stats.totalTasks || 48,
       change: "+5 this week",
       icon: <CheckSquare className="w-5 h-5" />,
-      colorClass: "stat-icon-2",
+      colorClass: "bg-[#fbbf24] text-slate-900",       // amber
     },
     {
       label: "Completed Tasks",
       value: stats.completedTasks || 24,
       change: "+12 this week",
       icon: <CheckCircle2 className="w-5 h-5" />,
-      colorClass: "stat-icon-3",
+      colorClass: "bg-[#34d399] text-slate-900",       // emerald
     },
     {
       label: "Pending Tasks",
       value: stats.pendingTasks || (stats.totalTasks - stats.completedTasks),
       change: "+4 this week",
       icon: <Clock className="w-5 h-5" />,
-      colorClass: "stat-icon-4",
+      colorClass: "bg-[#7dd3fc] text-slate-900",       // sky blue
     },
     {
       label: "Upcoming Deadlines",
       value: stats.upcomingDeadlines || 5,
       change: `Next: ${formattedDeadline}`,
       icon: <Calendar className="w-5 h-5" />,
-      colorClass: "stat-icon-5",
+      colorClass: "bg-[#c084fc] text-slate-900",       // purple
     },
   ];
+
 
 
   return (
