@@ -190,29 +190,51 @@ html.dark .neo-btn:hover {
 }
 
 /* ---------------------------------------------------- */
-/* NeoCard Header Colors — all driven by brand palette  */
+/* NeoCard Header Colors — each card has its own color  */
 /* ---------------------------------------------------- */
-.neo-header-coral,
-.neo-header-yellow,
-.neo-header-purple,
-.neo-header-mint,
-.neo-header-blue,
+.neo-header-coral {
+  background-color: #ff8585;   /* coral — warm salmon */
+  color: #18181b;
+  border-bottom: 1.5px solid #18181b;
+}
+
+.neo-header-yellow {
+  background-color: #fbbf24;   /* amber — warm gold */
+  color: #18181b;
+  border-bottom: 1.5px solid #18181b;
+}
+
+.neo-header-purple {
+  background-color: #c084fc;   /* purple — soft violet */
+  color: #18181b;
+  border-bottom: 1.5px solid #18181b;
+}
+
+.neo-header-mint {
+  background-color: #34d399;   /* emerald — fresh mint */
+  color: #18181b;
+  border-bottom: 1.5px solid #18181b;
+}
+
+.neo-header-blue {
+  background-color: #7dd3fc;   /* sky blue — cool azure */
+  color: #18181b;
+  border-bottom: 1.5px solid #18181b;
+}
+
+/* Brand-driven header (used only when explicitly requested) */
 .neo-header-brand {
   background-color: var(--brand-400);
   color: #18181b;
   border-bottom: 1.5px solid #18181b;
 }
 
-html.dark .neo-header-coral,
-html.dark .neo-header-yellow,
-html.dark .neo-header-purple,
-html.dark .neo-header-mint,
-html.dark .neo-header-blue,
 html.dark .neo-header-brand {
   background-color: var(--brand-600);
   color: #fff;
   border-bottom-color: var(--brand-800);
 }
+
 
 /* Floating Bottom Dock */
 .neo-dock {
