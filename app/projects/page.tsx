@@ -69,9 +69,7 @@ export default function ProjectsPage() {
           <div className="flex items-center gap-3">
             <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight flex items-center gap-2">
               <span>PROJECTS</span>
-              <span className="text-rose-500 font-mono tracking-widest text-lg sm:text-xl font-bold opacity-80">
-                \ \ \
-              </span>
+
             </h1>
           </div>
           <p className="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">
