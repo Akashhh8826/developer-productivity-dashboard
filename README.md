@@ -3,7 +3,7 @@
 A modern, responsive web application built with Next.js, TypeScript, and Tailwind CSS to track developer productivity, manage projects, and organize sprint tasks.
 
 ## 🔗 Live Demo
-- **Live Website (GitHub Pages):** [https://akashhh8826.github.io/developer-productivity-dashboard/](https://akashhh8826.github.io/developer-productivity-dashboard/)
+- **Live Website (GitHub Pages):** [[https://akashhh8826.github.io/developer-productivity-dashboard/](https://akashhh8826.github.io/developer-productivity-](https://akashhh8826.github.io/developer-productivity-dashboard/))
 - **GitHub Repository:** [https://github.com/Akashhh8826/developer-productivity-dashboard](https://github.com/Akashhh8826/developer-productivity-dashboard)
 
 ---
