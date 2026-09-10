@@ -273,10 +273,14 @@ export function DataProvider({ children }: { children: ReactNode }) {
 
         // Auto-complete: if every task is done (and there is at least one task),
         // mark the project as completed regardless of its current status.
-        // Otherwise keep the manually assigned status unchanged.
+        // Auto-revert: if a task is unmarked and progress drops below 100%,
+        // revert a "completed" project back to "active".
+        // Other manually set statuses (on-hold, planning) are never touched.
         const updatedStatus: ProjectStatus =
           total > 0 && progress === 100
             ? "completed"
+            : p.status === "completed" && total > 0 && progress < 100
+            ? "active"
             : p.status;
 
         return {
