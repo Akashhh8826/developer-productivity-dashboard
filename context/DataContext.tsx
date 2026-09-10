@@ -270,11 +270,11 @@ export function DataProvider({ children }: { children: ReactNode }) {
           currentTasks,
           p.id
         );
+        // Only auto-advance to "completed" when all tasks are done AND status is "active".
+        // Never auto-revert a manually set status (completed/on-hold/planning).
         const updatedStatus: ProjectStatus =
           progress === 100 && p.status === "active"
             ? "completed"
-            : progress < 100 && p.status === "completed"
-            ? "active"
             : p.status;
 
         return {

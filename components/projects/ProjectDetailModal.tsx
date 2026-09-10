@@ -29,6 +29,7 @@ import {
   Terminal,
   Server,
   Cpu,
+  ChevronDown,
 } from "lucide-react";
 import { ProjectNotesTab } from "./ProjectNotesTab";
 import { ProjectCredentialsTab } from "./ProjectCredentialsTab";
@@ -42,6 +43,7 @@ export function ProjectDetailModal() {
     setSelectedProjectId,
     deleteProject,
     updateProjectStatus,
+    addActivity,
   } = useData();
 
   const [activeTab, setActiveTab] = useState<"tasks" | "credentials" | "notes" | "activity">("notes");
@@ -50,6 +52,18 @@ export function ProjectDetailModal() {
   const project = projects.find((p) => p.id === selectedProjectId);
 
   if (!project) return null;
+
+  const handleStatusChange = (newStatus: string) => {
+    updateProjectStatus(project.id, newStatus as any);
+    addActivity({
+      type: "deadline_updated",
+      title: `Status changed to "${newStatus.replace("-", " ")}"`,
+      description: `Project "${project.name}" status was manually updated.`,
+      projectId: project.id,
+      projectName: project.name,
+      badgeColor: "purple",
+    });
+  };
 
   const getProjectIcon = (iconName?: string) => {
     switch (iconName) {
@@ -142,6 +156,29 @@ export function ProjectDetailModal() {
             <div className="neo-card px-3 py-1.5 flex items-center gap-2 bg-white dark:bg-slate-900 text-xs font-bold">
               <Calendar className="w-3.5 h-3.5 text-slate-500" />
               <span>{formatDate(project.dueDate)}</span>
+            </div>
+
+            {/* Status Selector Dropdown */}
+            <div className="relative">
+              <select
+                value={project.status}
+                onChange={(e) => handleStatusChange(e.target.value)}
+                className={`appearance-none text-xs font-black rounded-lg border px-3 py-1.5 pr-7 cursor-pointer focus:outline-none transition-colors ${
+                  project.status === "active"
+                    ? "bg-[#ffe3e3] dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border-rose-300 dark:border-rose-800"
+                    : project.status === "completed"
+                    ? "bg-[#d1fae5] dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-300 dark:border-emerald-800"
+                    : project.status === "planning"
+                    ? "bg-[#f3e8ff] dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border-purple-300 dark:border-purple-800"
+                    : "bg-[#fef9c3] dark:bg-yellow-950/60 text-yellow-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-800"
+                }`}
+              >
+                <option value="active">IN PROGRESS</option>
+                <option value="planning">PLANNING</option>
+                <option value="completed">COMPLETED</option>
+                <option value="on-hold">ON HOLD</option>
+              </select>
+              <ChevronDown className="w-3 h-3 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none opacity-60" />
             </div>
 
             {/* Project Settings / Delete Action */}
