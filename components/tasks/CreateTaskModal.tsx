@@ -57,7 +57,7 @@ export function CreateTaskModal({
     }
   }, [user]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!title.trim()) {
       setErrorText("Task title is required");
@@ -69,25 +69,30 @@ export function CreateTaskModal({
       return;
     }
 
-    addTask({
-      title: title.trim(),
-      description: description.trim(),
-      projectId,
-      priority,
-      status,
-      dueDate,
-      assignee: {
-        name: assigneeName.trim() || user?.name || "Alex Chen",
-        avatar: user?.avatar || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
-        role: user?.role || "Developer",
-      },
-    });
+    try {
+      setErrorText("");
+      await addTask({
+        title: title.trim(),
+        description: description.trim(),
+        projectId,
+        priority,
+        status,
+        dueDate,
+        assignee: {
+          name: assigneeName.trim() || user?.name || "Alex Chen",
+          avatar: user?.avatar || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+          role: user?.role || "Developer",
+        },
+      });
 
-    // Reset form & close modal
-    setTitle("");
-    setDescription("");
-    setErrorText("");
-    onClose();
+      // Reset form & close modal
+      setTitle("");
+      setDescription("");
+      setErrorText("");
+      onClose();
+    } catch (err: any) {
+      setErrorText(err?.message || "Failed to create task");
+    }
   };
 
   return (

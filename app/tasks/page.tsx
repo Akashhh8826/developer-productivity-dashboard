@@ -5,6 +5,7 @@ import { useData } from "@/context/DataContext";
 import { TaskList } from "@/components/tasks/TaskList";
 import { TaskCard } from "@/components/tasks/TaskCard";
 import { CreateTaskModal } from "@/components/tasks/CreateTaskModal";
+import { AiTaskModal } from "@/components/tasks/AiTaskModal";
 import { SearchBar } from "@/components/ui/SearchBar";
 import { FilterDropdown, FilterOption } from "@/components/ui/FilterDropdown";
 import { filterTasks } from "@/lib/filter-utils";
@@ -14,6 +15,7 @@ import {
   Kanban,
   ArrowUpDown,
   Plus,
+  Sparkles,
 } from "lucide-react";
 
 export default function TasksPage() {
@@ -26,6 +28,7 @@ export default function TasksPage() {
   const [viewMode, setViewMode] = useState<"list" | "board">("list");
   const [sortBy, setSortBy] = useState<"dueDate" | "priority" | "title">("dueDate");
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  const [isAiModalOpen, setIsAiModalOpen] = useState(false);
 
   // Options
   const statusOptions: FilterOption[] = [
@@ -137,6 +140,15 @@ export default function TasksPage() {
               <span>Board View</span>
             </button>
           </div>
+
+          <button
+            type="button"
+            onClick={() => setIsAiModalOpen(true)}
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-gradient-to-r from-rose-500 to-indigo-600 hover:from-rose-600 hover:to-indigo-700 active:scale-95 text-white text-xs font-semibold rounded-xl shadow-sm transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-rose-500/40"
+          >
+            <Sparkles className="w-4 h-4" />
+            <span>AI Suggestions</span>
+          </button>
 
           <button
             type="button"
@@ -287,6 +299,12 @@ export default function TasksPage() {
       <CreateTaskModal
         isOpen={isCreateModalOpen}
         onClose={() => setIsCreateModalOpen(false)}
+      />
+
+      {/* AI Task Suggestions Modal */}
+      <AiTaskModal
+        isOpen={isAiModalOpen}
+        onClose={() => setIsAiModalOpen(false)}
       />
     </div>
   );

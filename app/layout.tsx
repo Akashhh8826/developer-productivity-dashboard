@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { DataProvider } from "@/context/DataContext";
+import { AuthProvider } from "@/context/AuthContext";
 import { AppShell } from "@/components/layout/AppShell";
 
 export const metadata: Metadata = {
@@ -34,9 +35,11 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen antialiased">
-        <DataProvider>
-          <AppShell>{children}</AppShell>
-        </DataProvider>
+        <AuthProvider>
+          <DataProvider>
+            <AppShell>{children}</AppShell>
+          </DataProvider>
+        </AuthProvider>
       </body>
     </html>
   );

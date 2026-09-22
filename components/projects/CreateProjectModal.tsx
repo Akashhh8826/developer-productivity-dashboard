@@ -108,7 +108,7 @@ export function CreateProjectModal({ isOpen, onClose }: CreateProjectModalProps)
     setSelectedTechs((prev) => prev.filter((t) => t !== tech));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim()) {
       setErrorText("Project name is required");
@@ -123,24 +123,28 @@ export function CreateProjectModal({ isOpen, onClose }: CreateProjectModalProps)
       return;
     }
 
-    addProject({
-      name: name.trim(),
-      description: description.trim(),
-      techStack: selectedTechs,
-      status,
-      dueDate,
-      icon: selectedIcon,
-    });
+    try {
+      setErrorText("");
+      await addProject({
+        name: name.trim(),
+        description: description.trim(),
+        techStack: selectedTechs,
+        status,
+        dueDate,
+        icon: selectedIcon,
+      });
 
-    // Reset & close
-    setName("");
-    setDescription("");
-    setStatus("active");
-    setSelectedIcon("laptop");
-    setDueDate(new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString().split("T")[0]);
-    setSelectedTechs(["Next.js", "TypeScript"]);
-    setErrorText("");
-    onClose();
+      // Reset & close
+      setName("");
+      setDescription("");
+      setStatus("active");
+      setSelectedIcon("laptop");
+      setDueDate(new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString().split("T")[0]);
+      setSelectedTechs(["Next.js", "TypeScript"]);
+      onClose();
+    } catch (err: any) {
+      setErrorText(err?.message || "Failed to create project");
+    }
   };
 
   const allTechsToDisplay = Array.from(
