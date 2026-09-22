@@ -4,7 +4,7 @@
 
 ## 🔗 Links
 
-- **Live Demo:** https://akashhh8826.github.io/developer-productivity-dashboard/
+- **Live Demo:** https://developer-productivity-dashboard-opal.vercel.app/?utm_source=chatgpt.com
 - **GitHub Repo:** https://github.com/Akashhh8826/developer-productivity-dashboard
 
 ---
